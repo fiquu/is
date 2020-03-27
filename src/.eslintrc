@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": [
+    "@fiquu/eslint-config/typescript"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}
