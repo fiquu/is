@@ -175,6 +175,18 @@ describe('arithmetic checks', function () {
     });
   });
 
+  it('should return true if given two values are equal regexes', function () {
+    expect(is.equal(/abc/, /abc/)).to.be.true;
+  });
+
+  it('should return false if given two values are different regexes', function () {
+    expect(is.equal(/abc/, /def/)).to.be.false;
+  });
+
+  it('should return true if given two values are not handled types', function () {
+    expect(is.equal(undefined, new Error())).to.be.false;
+  });
+
   describe('!is.equal', function () {
     it('should return false if given two numbers are equal', function () {
       expect(!is.equal(3, 1 + 2)).to.be.false;
