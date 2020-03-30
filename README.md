@@ -17,7 +17,7 @@ npm i @fiquu/is
 ## Usage
 
 Import all or just what you need:
-```js
+```ts
 import is from '@fiquu/is`;
 
 is.string('foo'); // true
@@ -30,7 +30,7 @@ is.intlPhone('+12015556677'); // true
 is.intlPhone('1234'); // false
 ```
 
-```js
+```ts
 import { number as isNumber, string as isString } from '@fiquu/is/type`;
 import { intlPhone as isIntlPhone } from '@fiquu/is/regexp`;
 
@@ -47,7 +47,7 @@ isIntlPhone('1234'); // false
 ### Multiple Values
 
 If you need to check multiple values, then use the `some` and `every` array methods:
-```js
+```ts
 import is from '@fiquu/is`;
 
 ['foo', 'bar'].every(is.string); // true
