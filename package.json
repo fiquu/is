@@ -1,6 +1,6 @@
 {
   "name": "@fiquu/template",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "fiquu project template.",
   "main": "lib/index.js",
   "scripts": {
