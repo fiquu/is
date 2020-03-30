@@ -23,7 +23,7 @@ describe('array checks', function () {
     });
   });
 
-  describe('is.all.sorted', function () {
+  describe('every is.sorted', function () {
     it('should return true if all given arrays are sorted', function () {
       const arr = [1, 2, 3, 4, 5];
       const brr = [5, 6, 7, 8, 9];
@@ -39,7 +39,7 @@ describe('array checks', function () {
     });
   });
 
-  describe('is.any.sorted', function () {
+  describe('some is.sorted', function () {
     it('should return true if any given array is sorted', function () {
       const arr = [1, 2, 3, 4, 5];
       const brr = [10, 6, 7, 8, 9];
@@ -65,7 +65,7 @@ describe('array checks', function () {
     });
   });
 
-  describe('is.not.inArray', function () {
+  describe('not is.inArray', function () {
     it('should return false if the item is in the array', function () {
       expect(!is.inArray(3, [1, 4, 6, 7, 3])).to.be.false;
     });
