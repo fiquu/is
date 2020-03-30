@@ -1,7 +1,7 @@
 {
-  "name": "@fiquu/template",
+  "name": "@fiquu/is",
   "version": "1.0.0",
-  "description": "fiquu project template.",
+  "description": "Small check library for Node.js and the browser.",
   "main": "lib/index.js",
   "scripts": {
     "test": "nyc ts-mocha test/**/*.spec.ts",
@@ -12,17 +12,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fiquu/template.git"
+    "url": "git+https://github.com/fiquu/is.git"
   },
   "keywords": [
-    "template"
+    "is"
   ],
   "author": "fiquu (https://github.com/fiquu) <hi@fiquu.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fiquu/template/issues"
+    "url": "https://github.com/fiquu/is/issues"
   },
-  "homepage": "https://github.com/fiquu/template#readme",
+  "homepage": "https://github.com/fiquu/is#readme",
   "engines": {
     "node": ">= 12",
     "npm": ">= 6"
