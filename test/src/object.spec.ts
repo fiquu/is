@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import is from '../../src';
 
-describe('object', function () {
+describe('[object]', function () {
   describe('.propCount()', function () {
     it('returns true if given count is objects\' property count', function () {
       const obj = {
@@ -35,7 +35,7 @@ describe('object', function () {
       expect(is.propCount(Array, undefined)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given count is objects\' property count', function () {
         const obj = {
           test: 'testing',
@@ -77,7 +77,7 @@ describe('object', function () {
       expect(is.propDefined(obj, 'good')).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given property is in objects', function () {
         const obj = {
           test: 'testing',
@@ -118,7 +118,7 @@ describe('object', function () {
       expect(is.windowObject(obj)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given object is window', function () {
         const obj = {
           navigator: {},
@@ -157,7 +157,7 @@ describe('object', function () {
       expect(is.domNode(obj)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given object is a DOM node', function () {
         const obj = {
           nodeType: 1

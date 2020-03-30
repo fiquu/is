@@ -2,14 +2,14 @@ import { expect } from 'chai';
 
 import is from '../../src';
 
-describe('presence', function () {
+describe('[presence]', function () {
   describe('.empty()', function () {
     it('returns true if given array is empty', function () {
       expect(is.empty([])).to.be.true;
     });
 
     it('returns false if given array is empty', function () {
-      expect(is.empty(['not', 'empty'])).to.be.false;
+      expect(is.empty(['> not', 'empty'])).to.be.false;
     });
 
     it('returns true if given object is empty', function () {
@@ -63,33 +63,37 @@ describe('presence', function () {
       })).to.be.false;
     });
 
-    describe('not', function () {
+    it('returns false if given argument is an error', function () {
+      expect(is.empty(new Error())).to.be.false;
+    });
+
+    describe('> not', function () {
       it('returns false if given string is empty', function () {
         expect(!is.empty('')).to.be.false;
       });
 
       it('returns true if given array is not empty', function () {
-        expect(!is.empty(['not', 'empty'])).to.be.true;
+        expect(!is.empty(['> not', 'empty'])).to.be.true;
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if given array, object and string are empty', function () {
         expect([[], '', {}].every(is.empty)).to.be.true;
       });
 
       it('returns false if any given array element is not empty', function () {
-        expect([['not', 'empty'], {}, '', undefined].every(is.empty)).to.be.false;
+        expect([['> not', 'empty'], {}, '', undefined].every(is.empty)).to.be.false;
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any of the given array, object and string are empty', function () {
         expect([[{ not: 'empty' }], '', {}].some(is.empty)).to.be.true;
       });
 
       it('returns true if any given array elements is empty', function () {
-        expect([['not', 'empty'], {}, '', undefined].some(is.empty)).to.be.true;
+        expect([['> not', 'empty'], {}, '', undefined].some(is.empty)).to.be.true;
       });
     });
   });
@@ -107,7 +111,7 @@ describe('presence', function () {
       expect(is.existy('')).to.be.true;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns true if given value is null', function () {
         expect(!is.existy(null)).to.be.true;
       });
@@ -121,7 +125,7 @@ describe('presence', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given values are existy', function () {
         expect([[], {}, '', true].every(is.existy)).to.be.true;
       });
@@ -131,7 +135,7 @@ describe('presence', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given values are existy', function () {
         expect([undefined, {}, '', true].some(is.existy)).to.be.true;
       });
@@ -155,7 +159,7 @@ describe('presence', function () {
       expect(is.truthy(false)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given value is truthy', function () {
         expect(!is.truthy(true)).to.be.false;
       });
@@ -169,7 +173,7 @@ describe('presence', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given values are truthy', function () {
         expect(['truthy', ['truthy'], true].every(is.truthy)).to.be.true;
       });
@@ -179,7 +183,7 @@ describe('presence', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given values is truthy', function () {
         expect(['truthy', [], false].some(is.truthy)).to.be.true;
       });
@@ -203,7 +207,7 @@ describe('presence', function () {
       expect(is.falsy(false)).to.be.true;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns true if given value is truthy', function () {
         expect(!is.falsy(true)).to.be.true;
       });
@@ -217,7 +221,7 @@ describe('presence', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given values are falsy', function () {
         expect([undefined, false].every(is.falsy)).to.be.true;
       });
@@ -227,7 +231,7 @@ describe('presence', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given values are falsy', function () {
         expect([undefined, true, 34].some(is.falsy)).to.be.true;
       });
@@ -247,7 +251,7 @@ describe('presence', function () {
       expect(is.space(' ')).to.be.true;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns true if given value is not string', function () {
         expect(!is.space(null)).to.be.true;
       });
@@ -257,7 +261,7 @@ describe('presence', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns false if all given values are not space', function () {
         expect([' ', 'a'].every(is.space)).to.be.false;
       });
@@ -267,7 +271,7 @@ describe('presence', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given values are space', function () {
         expect([' ', 'a', 'foo'].some(is.space)).to.be.true;
       });

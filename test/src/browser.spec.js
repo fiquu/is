@@ -11,11 +11,11 @@ describe('Browser only checks', function () {
 
   describe('not is.windowObject', function () {
     it('returns false if given object is window object', function () {
-      expect(is.not.windowObject(window)).to.be.false;
+      expect(!is.windowObject(window)).to.be.false;
     });
 
     it('returns true if given object is nor window object', function () {
-      expect(is.not.windowObject({})).to.be.true;
+      expect(!is.windowObject({})).to.be.true;
     });
   });
 
@@ -59,11 +59,11 @@ describe('Browser only checks', function () {
     it('returns false if given object is a DOM node', function () {
       const obj = document.createElement('span');
 
-      expect(is.not.domNode(obj)).to.be.false;
+      expect(!is.domNode(obj)).to.be.false;
     });
 
     it('returns true if given object is not a DOM node', function () {
-      expect(is.not.domNode({})).to.be.true;
+      expect(!is.domNode({})).to.be.true;
     });
   });
 

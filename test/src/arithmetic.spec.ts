@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import is from '../../src';
 
-describe('arithmetic', function () {
+describe('[arithmetic]', function () {
   describe('.equal()', function () {
     it('returns true if given two numbers are equal', function () {
       expect(is.equal(1, 1)).to.be.true;
@@ -152,7 +152,7 @@ describe('arithmetic', function () {
       expect(is.equal(undefined, new Error())).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given two numbers are equal', function () {
         expect(!is.equal(3, 1 + 2)).to.be.false;
       });
@@ -256,7 +256,7 @@ describe('arithmetic', function () {
       expect(is.even(2.5)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is even', function () {
         expect(!is.even(2)).to.be.false;
       });
@@ -266,7 +266,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are even', function () {
         expect([2, 4, 6].every(is.even)).to.be.true;
       });
@@ -276,7 +276,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is even', function () {
         expect([2, 3, 5].some(is.even)).to.be.true;
       });
@@ -300,7 +300,7 @@ describe('arithmetic', function () {
       expect(is.odd(2.5)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is odd', function () {
         expect(!is.odd(3)).to.be.false;
       });
@@ -310,7 +310,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are odd', function () {
         expect([1, 3, 5].every(is.odd)).to.be.true;
       });
@@ -320,7 +320,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is odd', function () {
         expect([2, 4, 5].some(is.odd)).to.be.true;
       });
@@ -340,7 +340,7 @@ describe('arithmetic', function () {
       expect(is.positive(-2)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is positive', function () {
         expect(!is.positive(3)).to.be.false;
       });
@@ -350,7 +350,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are positive', function () {
         expect([1, 3, 5].every(is.positive)).to.be.true;
       });
@@ -360,7 +360,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is positive', function () {
         expect([2, -4, -5].some(is.positive)).to.be.true;
       });
@@ -380,7 +380,7 @@ describe('arithmetic', function () {
       expect(is.negative(2)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is negative', function () {
         expect(!is.negative(-3)).to.be.false;
       });
@@ -390,7 +390,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are negative', function () {
         expect([-1, -3, -5].every(is.negative)).to.be.true;
       });
@@ -400,7 +400,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is negative', function () {
         expect([2, 4, -5].some(is.negative)).to.be.true;
       });
@@ -420,7 +420,7 @@ describe('arithmetic', function () {
       expect(is.above(12, 13)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is above minimum value', function () {
         expect(!is.above(13, 12)).to.be.false;
       });
@@ -440,7 +440,7 @@ describe('arithmetic', function () {
       expect(is.under(12, 11)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns true if given number is under maximum value', function () {
         expect(!is.under(13, 12)).to.be.true;
       });
@@ -460,7 +460,7 @@ describe('arithmetic', function () {
       expect(is.within(20, 5, 15)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is within minimum and maximum values', function () {
         expect(!is.within(10, 5, 15)).to.be.false;
       });
@@ -490,7 +490,7 @@ describe('arithmetic', function () {
       expect(is.between(4.9, 5, 15)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is between minimum and maximum values', function () {
         expect(!is.between(10, 5, 15)).to.be.false;
         expect(!is.between(11, 5, 15)).to.be.false;
@@ -517,7 +517,7 @@ describe('arithmetic', function () {
       expect(is.float(2)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is decimal', function () {
         expect(!is.float(4.2)).to.be.false;
       });
@@ -527,7 +527,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are decimal', function () {
         expect([1.2, 3.4, 5.6].every(is.float)).to.be.true;
       });
@@ -537,7 +537,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is decimal', function () {
         expect([1.2, 3, 5].some(is.float)).to.be.true;
       });
@@ -557,7 +557,7 @@ describe('arithmetic', function () {
       expect(is.int(2.2)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is integer', function () {
         expect(!is.int(4)).to.be.false;
       });
@@ -567,7 +567,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are integer', function () {
         expect([1, 3, 5].every(is.int)).to.be.true;
       });
@@ -577,7 +577,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is integer', function () {
         expect([1.2, 3, 5].some(is.int)).to.be.true;
       });
@@ -597,7 +597,7 @@ describe('arithmetic', function () {
       expect(is.finite(Infinity)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is finite', function () {
         expect(!is.finite(4)).to.be.false;
       });
@@ -607,7 +607,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are finite', function () {
         expect([1, 2].every(is.finite)).to.be.true;
       });
@@ -617,7 +617,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is finite', function () {
         expect([Infinity, 1].some(is.finite)).to.be.true;
       });
@@ -637,7 +637,7 @@ describe('arithmetic', function () {
       expect(is.infinite(1)).to.be.false;
     });
 
-    describe('not', function () {
+    describe('> not', function () {
       it('returns false if given number is infinite', function () {
         expect(!is.infinite(Infinity)).to.be.false;
       });
@@ -647,7 +647,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('every', function () {
+    describe('> every', function () {
       it('returns true if all given numbers are infinite', function () {
         expect([Infinity, -Infinity].every(is.infinite)).to.be.true;
       });
@@ -657,7 +657,7 @@ describe('arithmetic', function () {
       });
     });
 
-    describe('some', function () {
+    describe('> some', function () {
       it('returns true if any given number is infinite', function () {
         expect([Infinity, 1].some(is.infinite)).to.be.true;
       });
