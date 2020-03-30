@@ -1,56 +1,4 @@
-import { nan, char } from './type';
-
-/**
- * Checks if the given object is empty. Treats null and undefined as such.
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value is empty.
- *
- * @example
- * is.empty({}); // true
- * is.empty(''); // true
- * is.empty([]); // true
- * is.empty(new Date('invalid date')); // true
- * is.empty(null); // true
- * is.empty(undefined); // true
- * is.empty(0); // false
- * is.empty(-1); // false
- * is.empty(1); // false
- * is.empty(true); // false
- * is.empty(false); // false
- * is.empty(new Date()); // false
- * is.empty({ not: 'empty' }); // false
- * is.empty(['not', 'empty']); // false
- * is.empty('not empty'); // false
- */
-export const empty = (val: any): boolean => {
-  if (this.string(val) || this.array(val)) {
-    return val.length === 0;
-  }
-
-  if (this.number(val) || this.boolean(val)) {
-    return false;
-  }
-
-  if (this.nan(val)) {
-    return true;
-  }
-
-  if (this.date(val)) {
-    return this.nan(val.valueOf());
-  }
-
-  if (this.not.existy(val)) {
-    return true;
-  }
-
-  if (this.object(val)) {
-    return Object.keys(val).length === 0;
-  }
-
-  return !val;
-};
+import { nan, char, string, array, boolean, number, date, object, fn } from './type';
 
 /**
  * Checks if the given object is not null or undefined.
@@ -107,20 +55,19 @@ export const truthy = (val: any): boolean =>
 export const falsy = (val: any): boolean => !truthy(val);
 
 /**
- * Checks if the given value is a space character. Checks for horizontal tab
- * (9), line feed (10), vertical tab (11), form feed (12), carriage return (13)
- * and space (32).
+ * Checks if the given value is a space character. Checks for horizontal tab (9), line feed (10), vertical tab (11),
+ * form feed (12), carriage return (13) and space (32).
  *
  * @param {any} val The value to check.
  *
  * @returns {boolean} Whether the value is a space character.
  *
  * @example
- * is.space(' '); // true
- * is.space('a'); // false
- * is.space(1); // false
+ * is.space(' ');   // true
+ * is.space('a');   // false
+ * is.space('foo'); // false
  */
-export const space = (val: any): boolean => {
+export const space = (val: string): boolean => {
   if (char(val)) {
     const code = val.charCodeAt(0);
 
@@ -128,4 +75,64 @@ export const space = (val: any): boolean => {
   }
 
   return false;
+};
+
+/**
+ * Checks if the given object is empty. Treats null and undefined as such.
+ *
+ * @param {any} val The value to check.
+ *
+ * @returns {boolean} Whether the value is empty.
+ *
+ * @example
+ * is.empty({}); // true
+ * is.empty(''); // true
+ * is.empty([]); // true
+ * is.empty(new Date('invalid date')); // true
+ * is.empty(null); // true
+ * is.empty(undefined); // true
+ * is.empty(0); // false
+ * is.empty(-1); // false
+ * is.empty(1); // false
+ * is.empty(true); // false
+ * is.empty(false); // false
+ * is.empty(new Date()); // false
+ * is.empty({ not: 'empty' }); // false
+ * is.empty(['not', 'empty']); // false
+ * is.empty('not empty'); // false
+ */
+export const empty = (val: any): boolean => {
+  if (val === null || val === undefined) {
+    return true;
+  }
+
+  if (string(val) || array(val)) {
+    return val.length === 0;
+  }
+
+  if (number(val) || boolean(val)) {
+    return false;
+  }
+
+  if (nan(val)) {
+    return true;
+  }
+
+  if (date(val)) {
+    return nan(val.valueOf());
+  }
+
+  if (fn(val)) {
+    return false;
+  }
+
+  if (object(val)) {
+    return Object.keys(val).length === 0;
+  }
+
+  if (existy(val)) {
+    return true;
+  }
+
+  return Boolean(val);
 };

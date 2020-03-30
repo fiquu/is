@@ -1,3 +1,5 @@
+import { object, number, string } from './type';
+
 /**
  * Checks if the given object has the given number of properties. This method doesn't support the `all` or `any`
  * interfaces.
@@ -8,18 +10,16 @@
  * @returns {boolean} Whether the object has the number of properties.
  *
  * @example
- * is.propertyCount({wer: 'asd'}, 1); // true
- * is.propertyCount({}, 5); // false
+ * is.propCount({wer: 'asd'}, 1); // true
+ * is.propCount({}, 5); // false
  */
-export const propertyCount = (obj: any, count: number): boolean => {
-  if (!this.object(obj) || !this.number(count)) {
+export const propCount = (obj: any, count: number): boolean => {
+  if (!object(obj) || !number(count)) {
     return false;
   }
 
   return Object.keys(obj).length === count;
 };
-
-
 
 /**
  * Checks if the given object has the given property. This method doesn't support the `all` or `any` interfaces.
@@ -34,9 +34,7 @@ export const propertyCount = (obj: any, count: number): boolean => {
  * is.propertyDefined({}, 'wer'); // false
  */
 export const propertyDefined = (obj: any, prop: string): boolean =>
-  this.object(obj) && this.string(prop) && prop in obj;
-
-
+  object(obj) && string(prop) && prop in obj;
 
 /**
  * Checks if the given object is the window object.
