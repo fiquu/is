@@ -236,7 +236,7 @@ export const eppPhone = (val: string): boolean =>
  * is.intPhone('1'); // false
  * is.intPhone(true); // false
  */
-export const intPhone = (val: string): boolean =>
+export const intlPhone = (val: string): boolean =>
   /^\+[1-9][0-9]{0,4}[0-9]{2,14}?$/
     .test(val);
 
