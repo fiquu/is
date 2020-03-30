@@ -33,7 +33,7 @@ export const propCount = (obj: any, count: number): boolean => {
  * is.propertyDefined({wer: 'asd'}, 'wer'); // true
  * is.propertyDefined({}, 'wer'); // false
  */
-export const propertyDefined = (obj: any, prop: string): boolean =>
+export const propDefined = (obj: any, prop: string): boolean =>
   object(obj) && string(prop) && prop in obj;
 
 /**

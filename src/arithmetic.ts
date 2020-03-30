@@ -174,30 +174,30 @@ export const between = (num, min, max): boolean =>
   [num, min, max].every(number) && num >= min && num <= max;
 
 /**
- * Checks if the given number is a decimal.
+ * Checks if the given number is a float.
  *
  * @param {number} num The number to check.
  *
- * @returns {boolean} Whether the number is a decimal.
+ * @returns {boolean} Whether the number is a float.
  *
  * @example
- * is.decimal(13.45); // true
- * is.decimal(13); // false
+ * is.float(13.45); // true
+ * is.float(13); // false
  */
-export const decimal = (num: number): boolean => number(num) && num % 1 !== 0;
+export const float = (num: number): boolean => number(num) && num % 1 !== 0;
 
 /**
- * Checks if the given number is an integer.
+ * Checks if the given number is an int.
  *
  * @param {number} num The number to check.
  *
- * @returns {boolean} Whether the number is an integer.
+ * @returns {boolean} Whether the number is an int.
  *
  * @example
- * is.integer(13); // true
- * is.integer(13.5); // false
+ * is.int(13); // true
+ * is.int(13.5); // false
  */
-export const integer = (num: number): boolean => number(num) && num % 1 === 0;
+export const int = (num: number): boolean => number(num) && num % 1 === 0;
 
 /**
  * Checks if the given number is finite using native `isFinite`.
