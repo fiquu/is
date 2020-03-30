@@ -43,10 +43,6 @@ export const lowerCase = (str: string): boolean => string(str) && str === str.to
  * is.capitalized('foo'); // false
  */
 export const capitalized = (str: string): boolean => {
-  if (!string(str)) {
-    return false;
-  }
-
   const words = str.split(/\s+/);
   const capitalized = [];
 

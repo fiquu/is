@@ -102,7 +102,7 @@ export const space = (val: string): boolean => {
  * is.empty('not empty'); // false
  */
 export const empty = (val: any): boolean => {
-  if (val === null || val === undefined) {
+  if (!existy(val)) {
     return true;
   }
 
@@ -128,10 +128,6 @@ export const empty = (val: any): boolean => {
 
   if (object(val)) {
     return Object.keys(val).length === 0;
-  }
-
-  if (existy(val)) {
-    return true;
   }
 
   return Boolean(val);

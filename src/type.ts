@@ -1,20 +1,4 @@
 /**
- * Checks if the given value is of arguments type with a fallback check for IE.
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value is of arguments type.
- *
- * @example
- * is.args(arguments); // true
- * is.args('not arguments'); // false
- */
-export const args = (val: any): boolean => val && (
-  Object.prototype.toString.call(val) === '[object Arguments]' ||
-  (typeof val === 'object' && 'callee' in val)
-);
-
-/**
  * Checks if the given value is an array using native `Array.isArray`.
  *
  * @param {any} val The value to check.
@@ -215,8 +199,6 @@ export const sameType = (a: any, b: any): boolean => {
 
   return Object.prototype.toString.call(a) === Object.prototype.toString.call(b);
 };
-
-
 
 /**
  * Checks if the given value is a single char.

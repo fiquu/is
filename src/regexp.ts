@@ -141,55 +141,6 @@ export const base64 = (val: string): boolean =>
     .test(val);
 
 /**
- * Checks for a valid US ZIP code.
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value is a US ZIP code.
- *
- * @example
- * is.usZipCode('02201-1020'); // true
- * is.usZipCode('1'); // false
- * is.usZipCode(true); // false
- */
-export const usZipCode = (val: string): boolean =>
-  /^[0-9]{5}(?:-[0-9]{4})?$/
-    .test(val);
-
-/**
- * Checks for a valid Canada postal code.
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value is a Canada postal code.
- *
- * @example
- * is.caPostalCode('L8V3Y1'); // true
- * is.caPostalCode('L8V 3Y1'); // true
- * is.caPostalCode('1'); // false
- * is.caPostalCode(true); // false
- */
-export const caPostalCode = (val: string): boolean =>
-  /^(?!.*[DFIOQU])[A-VXY][0-9][A-Z]\s?[0-9][A-Z][0-9]$/
-    .test(val);
-
-/**
- * Checks for a valid UK post code.
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value is a UK post code.
- *
- * @example
- * is.ukPostCode('B184BJ'); // true
- * is.ukPostCode('1'); // false
- * is.ukPostCode(true); // false
- */
-export const ukPostCode = (val: string): boolean =>
-  /^[A-Z]{1,2}[0-9RCHNQ][0-9A-Z]?\s?[0-9][ABD-HJLNP-UW-Z]{2}$|^[A-Z]{2}-?[0-9]{4}$/
-    .test(val);
-
-/**
  * Checks for a valid north american number plan formatted value.
  *
  * @param {any} val The value to check.
@@ -241,49 +192,6 @@ export const intlPhone = (val: string): boolean =>
     .test(val);
 
 /**
- * Checks for a valid social security number.
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value is a social security number.
- *
- * @example
- * is.socialSecurityNumber('017-90-7890'); // true
- * is.socialSecurityNumber('1'); // false
- * is.socialSecurityNumber(true); // false
- */
-export const socialSecurityNumber = (val: string): boolean =>
-  /^(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}$/
-    .test(val);
-
-/**
- * Checks for an affirmative value (case-insensitive).
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value affirmative.
- *
- * @example
- * is.affirmative('yes'); // true
- * is.affirmative('true'); // true
- * is.affirmative('y'); // true
- * is.affirmative('1'); // true
- * is.affirmative('ok'); // true
- * is.affirmative('okay'); // true
- * is.affirmative(1); // true
- * is.affirmative(true); // true
- * is.affirmative('no'); // false
- * is.affirmative('N'); // false
- * is.affirmative(0); // false
- * is.affirmative(false); // false
- * is.affirmative({}); // false
- * is.affirmative(null); // false
- */
-export const affirmative = (val: string): boolean =>
-  /^(?:1|t(?:rue)?|y(?:es)?|o\.?k\.?(?:ay)?)$/i
-    .test(val);
-
-/**
  * Checks for a valid hexadecimal value.
  *
  * @param {any} val The value to check.
@@ -291,13 +199,13 @@ export const affirmative = (val: string): boolean =>
  * @returns {boolean} Whether the value is hexadecimal.
  *
  * @example
- * is.hexadecimal('ff'); // true
- * is.hexadecimal('ffFF'); // true
- * is.hexadecimal('fF0'); // true
- * is.hexadecimal(0.287); // false
- * is.hexadecimal(true); // false
+ * is.hex('ff'); // true
+ * is.hex('ffFF'); // true
+ * is.hex('fF0'); // true
+ * is.hex(0.287); // false
+ * is.hex(true); // false
  */
-export const hexadecimal = (val: string): boolean =>
+export const hex = (val: string): boolean =>
   /^[0-9a-fA-F]+$/
     .test(val);
 
