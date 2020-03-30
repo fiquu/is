@@ -178,8 +178,7 @@ export const json = (val: string): boolean => {
 export const regexp = (val: any): boolean => Object.prototype.toString.call(val) === '[object RegExp]';
 
 /**
- * Checks if the given values are of same type preventing NaN and Number same type check. This method doesn't support
- * the `all` or `any` interfaces.
+ * Checks if the given values are of same type preventing NaN and Number same type check.
  *
  * @param {any} a The first value to check.
  * @param {any} b The other value to check.

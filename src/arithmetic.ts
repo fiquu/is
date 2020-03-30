@@ -104,8 +104,7 @@ export const positive = (num: number): boolean => number(num) && num > 0;
 export const negative = (num: number): boolean => number(num) && num < 0;
 
 /**
- * Checks if the given number is greater than the given minimum. method doesn't support the `all` or `any`
- * interfaces.
+ * Checks if the given number is greater than the given minimum.
  *
  * @param {number} num The number to check.
  * @param {number} min The minimum value exclusive.
@@ -120,7 +119,7 @@ export const negative = (num: number): boolean => number(num) && num < 0;
 export const above = (num: number, min: number): boolean => number(num) && number(min) && num > min;
 
 /**
- * Checks if the given number is less than the given maximum. method doesn't support the `all` or `any` interfaces.
+ * Checks if the given number is less than the given maximum.
  *
  * @param {number} num The number to check.
  * @param {number} max The maximum value exclusive.
@@ -135,8 +134,7 @@ export const above = (num: number, min: number): boolean => number(num) && numbe
 export const under = (num: number, max: number): boolean => number(num) && number(max) && num < max;
 
 /**
- * Checks if the given number is within the given minimum and maximum. method doesn't support the `all` or `any`
- * interfaces.
+ * Checks if the given number is within the given minimum and maximum.
  *
  * @param {number} num The number to check.
  * @param {number} min The minimum value exclusive.
@@ -154,8 +152,7 @@ export const within = (num: number, min: number, max: number): boolean =>
   [num, min, max].every(number) && num > min && num < max;
 
 /**
- * Checks if the given number is between the given minimum and maximum (inclusive). method doesn't support the
- * `all` or `any` interfaces.
+ * Checks if the given number is between the given minimum and maximum (inclusive).
  *
  * @param {number} num The number to check.
  * @param {number} min The minimum value exclusive.

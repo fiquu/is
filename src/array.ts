@@ -1,8 +1,7 @@
 import { equal } from './arithmetic';
 
 /**
- * Checks if the given value is in the given array. This method does not
- * support `all` and `any` interfaces.
+ * Checks if the given value is in the given array.
  *
  * @param {any} val The value to search for.
  * @param {any[]} arr The array to search into.

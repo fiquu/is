@@ -130,5 +130,5 @@ export const empty = (val: any): boolean => {
     return Object.keys(val).length === 0;
   }
 
-  return Boolean(val);
+  return !Boolean(val);
 };

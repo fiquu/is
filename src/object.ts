@@ -1,8 +1,7 @@
 import { object, number, string } from './type';
 
 /**
- * Checks if the given object has the given number of properties. This method doesn't support the `all` or `any`
- * interfaces.
+ * Checks if the given object has the given number of properties.
  *
  * @param {object} obj The object to check.
  * @param {number} count The number of properties to expect.
@@ -22,7 +21,7 @@ export const propCount = (obj: any, count: number): boolean => {
 };
 
 /**
- * Checks if the given object has the given property. This method doesn't support the `all` or `any` interfaces.
+ * Checks if the given object has the given property.
  *
  * @param {object} obj The object to check.
  * @param {string} prop The name of the property to search for.
