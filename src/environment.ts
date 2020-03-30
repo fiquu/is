@@ -14,8 +14,6 @@ const appVersion = (browser && 'navigator' in window && 'appVersion' in navigato
  */
 export const firefox = (): boolean => browser && /Firefox\//.test(userAgent);
 
-
-
 /**
  * Checks if the current browser is Edge. This method doesn't support the
  * `all` or `any` interfaces.
@@ -25,8 +23,6 @@ export const firefox = (): boolean => browser && /Firefox\//.test(userAgent);
  * @example is.firefox();
  */
 const edge = (): boolean => browser && /Edge\//.test(userAgent);
-
-
 
 /**
  * Checks if the current browser is Internet Explorer. This method doesn't support the `all` or `any` interfaces.
@@ -40,7 +36,7 @@ const edge = (): boolean => browser && /Edge\//.test(userAgent);
  * is.ie(9);
  * is.ie(10);
  */
-const ie = (ver): boolean => {
+export const ie = (ver): boolean => {
   if (!ver) {
     return browser && (/MSIE/.test(userAgent) || 'ActiveXObject' in window);
   }
@@ -52,8 +48,6 @@ const ie = (ver): boolean => {
   return browser && new RegExp(`MSIE ${ver}`).test(userAgent);
 };
 
-
-
 /**
  * Checks if the current browser is Opera. This method doesn't support the `all` or `any` interfaces.
  *
@@ -63,8 +57,6 @@ const ie = (ver): boolean => {
  */
 export const opera = (): boolean => browser && /(Opera|OPR)\//.test(userAgent);
 
-
-
 /**
  * Checks if the current browser is Vivaldi. This method doesn't support the `all` or `any` interfaces.
  *
@@ -73,8 +65,6 @@ export const opera = (): boolean => browser && /(Opera|OPR)\//.test(userAgent);
  * @example is.vivaldi();
  */
 export const vivaldi = (): boolean => browser && /Vivaldi/.test(userAgent);
-
-
 
 /**
  * Checks if the current browser is Twitter's internal web view. This method doesn't support the `all` or `any`
@@ -86,8 +76,6 @@ export const vivaldi = (): boolean => browser && /Vivaldi/.test(userAgent);
  */
 export const twitter = (): boolean => browser && /Twitter/.test(userAgent);
 
-
-
 /**
  * Checks if the current browser is Facebook's internal web view. This method doesn't support the `all` or `any`
  * interfaces.
@@ -97,8 +85,6 @@ export const twitter = (): boolean => browser && /Twitter/.test(userAgent);
  * @example is.facebook();
  */
 export const facebook = (): boolean => browser && /FB_IAB/.test(userAgent);
-
-
 
 /**
  * Checks if the current browser is Chrome or Chromium. This method doesn't
@@ -111,8 +97,6 @@ export const facebook = (): boolean => browser && /FB_IAB/.test(userAgent);
 export const chrome = (): boolean =>
   browser && /(Chrome|Chromium)\//.test(userAgent) && !opera() && !vivaldi() && !edge() && !facebook() && !twitter();
 
-
-
 /**
  * Checks if the current browser is Safari. This method doesn't support the `all` or `any` interfaces.
  *
@@ -123,8 +107,6 @@ export const chrome = (): boolean =>
 export const safari = (): boolean =>
   browser && /Safari/.test(userAgent) && !chrome() && !vivaldi() && !opera() && !edge() && !facebook() && !twitter();
 
-
-
 /**
  * Checks if the current device is an iPhone. This method doesn't support the `all` or `any` interfaces.
  *
@@ -133,8 +115,6 @@ export const safari = (): boolean =>
  * @example is.iphone();
  */
 export const iphone = (): boolean => browser && /iphone/i.test(userAgent);
-
-
 
 /**
  * Checks if the current device is an iPad. This method doesn't support the `all` or `any` interfaces.
@@ -145,8 +125,6 @@ export const iphone = (): boolean => browser && /iphone/i.test(userAgent);
  */
 export const ipad = (): boolean => browser && /ipad/i.test(userAgent);
 
-
-
 /**
  * Checks if the current device is an iPod. This method doesn't support the `all` or `any` interfaces.
  *
@@ -155,8 +133,6 @@ export const ipad = (): boolean => browser && /ipad/i.test(userAgent);
  * @example is.ipod();
  */
 export const ipod = (): boolean => browser && /ipod/i.test(userAgent);
-
-
 
 /**
  * Checks if the current device is runnig iOS. This method doesn't support the `all` or `any` interfaces.
@@ -167,8 +143,6 @@ export const ipod = (): boolean => browser && /ipod/i.test(userAgent);
  */
 export const ios = (): boolean => browser && (iphone() || ipad() || ipod());
 
-
-
 /**
  * Checks if the current device is an Android device. This method doesn't support the `all` or `any` interfaces.
  *
@@ -177,8 +151,6 @@ export const ios = (): boolean => browser && (iphone() || ipad() || ipod());
  * @example is.android();
  */
 export const android = (): boolean => browser && /android/i.test(userAgent);
-
-
 
 /**
  * Checks if the current device is an Android phone.This method doesn't support the `all` or `any` interfaces.
@@ -189,8 +161,6 @@ export const android = (): boolean => browser && /android/i.test(userAgent);
  */
 export const androidPhone = (): boolean => browser && /android/i.test(userAgent) && /mobile/i.test(userAgent);
 
-
-
 /**
  * Checks if the current device is an Android tablet.This method doesn't support the `all` or `any` interfaces.
  *
@@ -199,8 +169,6 @@ export const androidPhone = (): boolean => browser && /android/i.test(userAgent)
  * @example is.androidTablet();
  */
 export const androidTablet = (): boolean => browser && /android/i.test(userAgent) && !/mobile/i.test(userAgent);
-
-
 
 /**
  * Checks if the current device is a Blackberry device. This method doesn't support the `all` or `any` interfaces.
@@ -211,8 +179,6 @@ export const androidTablet = (): boolean => browser && /android/i.test(userAgent
  */
 export const blackberry = (): boolean => browser && (/blackberry/i.test(userAgent) || /BB10/i.test(userAgent));
 
-
-
 /**
  * Checks if the current device running Windows. This method doesn't support the `all` or `any` interfaces.
  *
@@ -221,8 +187,6 @@ export const blackberry = (): boolean => browser && (/blackberry/i.test(userAgen
  * @example is.windows();
  */
 export const windows = (): boolean => browser && /win/i.test(appVersion);
-
-
 
 /**
  * Checks if the current device is a Windows phone.This method doesn't support the `all` or `any` interfaces.
@@ -233,8 +197,6 @@ export const windows = (): boolean => browser && /win/i.test(appVersion);
  */
 export const windowsPhone = (): boolean => browser && windows() && /phone/i.test(userAgent);
 
-
-
 /**
  * Checks if the current device is a Windows tablet.This method doesn't support the `all` or `any` interfaces.
  *
@@ -243,8 +205,6 @@ export const windowsPhone = (): boolean => browser && windows() && /phone/i.test
  * @example is.windowsTablet();
  */
 export const windowsTablet = (): boolean => browser && windows() && !windowsPhone() && /touch/i.test(userAgent);
-
-
 
 /**
  * Checks if the current device is a mobile device.This method doesn't support the `all` or `any` interfaces.
@@ -256,8 +216,6 @@ export const windowsTablet = (): boolean => browser && windows() && !windowsPhon
 export const mobile = (): boolean =>
   browser && (iphone() || ipod() || androidPhone() || blackberry() || windowsPhone());
 
-
-
 /**
  * Checks if the current device is a tablet.This method doesn't support the `all` or `any` interfaces.
  *
@@ -267,8 +225,6 @@ export const mobile = (): boolean =>
  */
 export const tablet = (): boolean => browser && (ipad() || androidTablet() || windowsTablet());
 
-
-
 /**
  * Checks if the current device is a desktop device.This method doesn't support the `all` or `any` interfaces.
  *
@@ -277,8 +233,6 @@ export const tablet = (): boolean => browser && (ipad() || androidTablet() || wi
  * @example is.desktop();
  */
 export const desktop = (): boolean => browser && !mobile() && !tablet();
-
-
 
 /**
  * Checks if the current device running Linux (excluding Android). This method doesn't support the `all` or `any`
@@ -290,8 +244,6 @@ export const desktop = (): boolean => browser && !mobile() && !tablet();
  */
 export const linux = (): boolean => browser && /linux/i.test(appVersion) && !android();
 
-
-
 /**
  * Checks if the current device running MacOS. This method doesn't support the `all` or `any` interfaces.
  *
@@ -300,8 +252,6 @@ export const linux = (): boolean => browser && /linux/i.test(appVersion) && !and
  * @example is.macos();
  */
 export const macos = (): boolean => browser && /mac/i.test(appVersion);
-
-
 
 /**
  * Alias for `macos`.
@@ -317,8 +267,6 @@ export const osx = macos;
  */
 export const online = (): boolean => browser && navigator && navigator.onLine;
 
-
-
 /**
  * Checks if the current device is off-line.This method doesn't support the `all` or `any` interfaces.
  *
@@ -328,8 +276,6 @@ export const online = (): boolean => browser && navigator && navigator.onLine;
  */
 export const offline = (): boolean => !online();
 
-
-
 /**
  * Checks if the current device is touch capable.This method doesn't support the `all` or `any` interfaces.
  *
@@ -338,8 +284,6 @@ export const offline = (): boolean => !online();
  * @example is.touchDevice();
  */
 export const touchDevice = (): boolean => browser && ('ontouchstart' in window);
-
-
 
 /**
  * Checks if the current environment is Node.js.This method doesn't support the `all` or `any` interfaces.
