@@ -9,6 +9,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
     "max-lines-per-function": "off",
     "max-lines": "off"
   }
