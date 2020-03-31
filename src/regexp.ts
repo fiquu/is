@@ -276,3 +276,22 @@ export const ipv6 = (val: string): boolean =>
  * is.ip(true); // false
  */
 export const ip = (val: string): boolean => ipv4(val) || ipv6(val);
+
+/**
+ * Checks for a valid UUID (v1, v3, v4, v5) string.
+ *
+ * @param {any} val The value to check.
+ *
+ * @returns {boolean} Whether the value is an UUID string.
+ *
+ * @example
+ * is.uuid('b7557270-735b-11ea-9135-cb86b071733e'); // true (v1)
+ * is.uuid('0d0b682a-57ef-3539-94af-70e6678afe40'); // true (v3)
+ * is.uuid('c39b9935-8374-4ea0-b76b-7313dc929be7'); // true (v4)
+ * is.uuid('2bd4ebf8-85a4-5add-b18c-eff4bd14a13a'); // true (v5)
+ * is.uuid('foo-2bd4ebf8-85a4-5add-b18c-eff4bd14a13a-bar'); // false
+ * is.uuid('not uuid'); // false
+ * is.uuid('12345'); // false
+ */
+export const uuid = (val: string): boolean =>
+  /^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$/.test(val);
