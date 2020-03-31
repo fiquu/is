@@ -7,7 +7,7 @@ import * as string from './string';
 import * as array from './array';
 import * as type from './type';
 
-export default Object.freeze({
+export = Object.freeze({
   ...environment,
   ...arithmetic,
   ...presence,
