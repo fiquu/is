@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import * as uuid from 'uuid';
 
 import is from '../../src';
 
@@ -724,7 +725,7 @@ describe('regexp', function () {
     });
 
     it('returns false if given value is not a valid IPv6 address', function () {
-      expect(is.ip('985.12.3.4')).to.be.false;
+      expect(is.ipv6('985.12.3.4')).to.be.false;
     });
 
     describe('> not', function () {
@@ -754,6 +755,54 @@ describe('regexp', function () {
 
       it('returns false if all given values are not valid IPv6 address', function () {
         expect(['1.2.3.', '78FF:::::::L'].some(is.ipv6)).to.be.false;
+      });
+    });
+  });
+
+  describe('is.uuid', function () {
+    it('returns true if given value is a valid UUID string', function () {
+      expect(is.uuid(uuid.v1())).to.be.true;
+      expect(is.uuid(uuid.v3('localhost', uuid.v3.URL))).to.be.true;
+      expect(is.uuid(uuid.v4())).to.be.true;
+      expect(is.uuid(uuid.v5('localhost', uuid.v5.URL))).to.be.true;
+    });
+
+    it('returns false if given value is not a valid UUID string', function () {
+      expect(is.uuid('foo-03566d91-04e0-4a91-b56a-d84a8925f727-bar')).to.be.false;
+      expect(is.uuid('m4ybes0m-37h1-ngl1-k3an-uuidbu7n0tt7')).to.be.false;
+      expect(is.uuid('985.12.3.4')).to.be.false;
+      expect(is.uuid('foo')).to.be.false;
+    });
+
+    describe('> not', function () {
+      it('returns false if given value is a valid UUID string', function () {
+        expect(!is.uuid('c7583460-b7f9-428e-b883-5eb9af17dec5')).to.be.false;
+      });
+
+      it('returns true if given value is not a valid UUID string', function () {
+        expect(!is.uuid('0..3.4')).to.be.true;
+      });
+    });
+
+    describe('> every', function () {
+      it('returns true if all given values are valid UUID strings', function () {
+        expect([
+          '12d61e58-f49b-46fd-9334-884ebcd2d690', 'c2887be6-54c0-4d0c-ad5f-3ecdbdcb7c37'
+        ].every(is.uuid)).to.be.true;
+      });
+
+      it('returns false if any given value is not a valid UUID string', function () {
+        expect(['987.25.45.6', 'c2887be6-54c0-4d0c-ad5f-3ecdbdcb7c37'].every(is.uuid)).to.be.false;
+      });
+    });
+
+    describe('> some', function () {
+      it('returns true if any given value is a valid UUID string', function () {
+        expect(['2001:0db8::1:0:0:1', '850..1.4', 'c2887be6-54c0-4d0c-ad5f-3ecdbdcb7c37'].some(is.uuid)).to.be.true;
+      });
+
+      it('returns false if all given values are not valid UUID string', function () {
+        expect(['1.2.3.', '78FF:::::::L'].some(is.uuid)).to.be.false;
       });
     });
   });
