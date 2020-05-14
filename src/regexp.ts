@@ -295,3 +295,23 @@ export const ip = (val: string): boolean => ipv4(val) || ipv6(val);
  */
 export const uuid = (val: string): boolean =>
   /^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$/.test(val);
+
+/**
+ * Checks for a valid JWT string.
+ *
+ * @param {any} val The value to check.
+ *
+ * @returns {boolean} Whether the value is an UUID string.
+ *
+ * @see https://regex101.com/library/oI0rR9
+ *
+ * @example
+ * is.jwt('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1dWlkIiwibmFtZSI6ImZpLWlzIn0.KPxCSQM35DOilazwkIrafyY_UHl1NoA_Q0PQG7DLVkc'); // true
+ * is.jwt('aaaa.b.cc'); // false
+ * is.jwt('a.b.c'); // false
+ * is.jwt('a.b'); // false
+ * is.jwt('not jwt'); // false
+ * is.jwt('12345'); // false
+ */
+export const jwt = (val: string): boolean =>
+  /^([a-zA-Z0-9_=]{4,})\.([a-zA-Z0-9_=]{4,})\.([a-zA-Z0-9_\-\+\/=]{4,})$/.test(val);

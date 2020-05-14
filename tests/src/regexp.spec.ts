@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import * as uuid from 'uuid';
+import faker from 'faker';
 
 import is from '../../src';
 
@@ -803,6 +804,89 @@ describe('regexp', function () {
 
       it('returns false if all given values are not valid UUID string', function () {
         expect(['1.2.3.', '78FF:::::::L'].some(is.uuid)).to.be.false;
+      });
+    });
+  });
+
+  describe('is.jwt', function () {
+    it('returns true if given value is a valid JWT string', function () {
+      expect(is.jwt([ // HS256
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+        'eyJzdWIiOiJ1dWlkIiwibmFtZSI6ImZpLWlzIn0',
+        'KPxCSQM35DOilazwkIrafyY_UHl1NoA_Q0PQG7DLVkc'
+      ].join('.'))).to.be.true;
+
+      expect(is.jwt([ // HS384
+        'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9',
+        'eyJzdWIiOiJ1dWlkIiwibmFtZSI6ImZpLWlzIn0',
+        'Vo-c7BPjf9zoUwBxamYOdc7ubHbw_it3zNsSGCNK19Of62SNdDqOaK6OuAnxCKAW'
+      ].join('.'))).to.be.true;
+
+      expect(is.jwt([ // HS512
+        'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9',
+        'eyJzdWIiOiJ1dWlkIiwibmFtZSI6ImZpLWlzIn0',
+        'rEraGEdMzF3_IaSyvc7PZCHiwLpu5vyLaz0ADxpL4OKDxVMKKkVrXCIvoJ_D0gd-h7SuZSJ2IMmDKN4otfjISQ'
+      ].join('.'))).to.be.true;
+    });
+
+    it('returns false if given value is not a valid JWT string', function () {
+      expect(is.jwt('foo-03566d91-04e0-4a91-b56a-d84a8925f727-bar')).to.be.false;
+      expect(is.jwt('m4ybes0m-37h1-ngl1-k3an-jwtbu7n0tt7')).to.be.false;
+      expect(is.jwt('985.12.3.4')).to.be.false;
+      expect(is.jwt('a.b.c')).to.be.false;
+      expect(is.jwt('foo')).to.be.false;
+    });
+
+    describe('> not', function () {
+      it('returns false if given value is a valid JWT string', function () {
+        expect(!is.jwt([
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+          'eyJzdWIiOiJ1dWlkIiwibmFtZSI6ImZpLWlzIn0',
+          'KPxCSQM35DOilazwkIrafyY_UHl1NoA_Q0PQG7DLVkc'
+        ].join('.'))).to.be.false;
+      });
+
+      it('returns true if given value is not a valid JWT string', function () {
+        expect(!is.jwt('0..3.4')).to.be.true;
+      });
+    });
+
+    describe('> every', function () {
+      it('returns true if all given values are valid JWT strings', function () {
+        expect([
+          [
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+            'eyJzdWIiOiJ1dWlkIiwibmFtZSI6ImZpLWlzIn0',
+            'KPxCSQM35DOilazwkIrafyY_UHl1NoA_Q0PQG7DLVkc'
+          ].join('.'),
+          [
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+            'eyJzdWIiOiJ1dWlkIiwibmFtZSI6InRlc3RzIn0',
+            'ppemJPAWk_s6t1yWhPAfW4C8nV98b1KpidvM-5I2sAI'
+          ].join('.')
+        ].every(is.jwt)).to.be.true;
+      });
+
+      it('returns false if any given value is not a valid JWT string', function () {
+        expect(['987.25.45.6', [
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+          'eyJzdWIiOiJ1dWlkIiwibmFtZSI6InRlc3RzIn0',
+          'ppemJPAWk_s6t1yWhPAfW4C8nV98b1KpidvM-5I2sAI'
+        ].join('.')].every(is.jwt)).to.be.false;
+      });
+    });
+
+    describe('> some', function () {
+      it('returns true if any given value is a valid JWT string', function () {
+        expect(['2001:0db8::1:0:0:1', '850..1.4', [
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+          'eyJzdWIiOiJ1dWlkIiwibmFtZSI6InRlc3RzIn0',
+          'ppemJPAWk_s6t1yWhPAfW4C8nV98b1KpidvM-5I2sAI'
+        ].join('.')].some(is.jwt)).to.be.true;
+      });
+
+      it('returns false if all given values are not valid JWT string', function () {
+        expect(['1.2.3.', '78FF:::::::L', 'a.b.c'].some(is.jwt)).to.be.false;
       });
     });
   });
