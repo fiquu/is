@@ -47,8 +47,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@fiquu/eslint-config": "^3.0.7",
-    "@types/chai": "^4.2.11",
+    "@fiquu/eslint-config": "^3.0.8",
+    "@types/chai": "^4.2.12",
     "@types/faker": "^4.1.12",
     "@types/mocha": "^8.0.0",
     "@types/node": "^12.12.51",
