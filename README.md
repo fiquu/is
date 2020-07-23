@@ -6,7 +6,7 @@
 ![npm (scoped)](https://img.shields.io/npm/v/@fiquu/is)
 ![npm](https://img.shields.io/npm/dw/@fiquu/is)
 
-Small check library for Node.js and the browser.
+Functional, dependency-free check library for Node.js and the browser (transpiled).
 
 ## Installation
 
@@ -17,6 +17,7 @@ npm i @fiquu/is
 ## Usage
 
 Import all or just what you need:
+
 ```ts
 import is from '@fiquu/is';
 
@@ -47,6 +48,7 @@ isIntlPhone('1234'); // false
 ### Multiple Values
 
 If you need to check multiple values, then use the `some` and `every` array methods:
+
 ```ts
 import is from '@fiquu/is';
 
@@ -65,4 +67,4 @@ import is from '@fiquu/is';
 
 ## Documentation
 
-Please see https://fiquu.github.io/is/ for more details.
+Please see [the documentation page](https://fiquu.github.io/is/) for more details.
