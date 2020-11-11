@@ -70,3 +70,35 @@ export const capitalized = (str: string): boolean => {
  */
 export const palindrome = (str: string): boolean =>
   string(str) && str === str.split('').reverse().join('');
+
+/**
+ * Checks for a valid base64 string.
+ *
+ * @param {any} val The value to check.
+ *
+ * @returns {boolean} Whether the value is a base64 string.
+ *
+ * @see https://bit.dev/chriso/validator-js/is-base64/
+ *
+ * @example
+ * is.base64String('ZmktaXM='); // true
+ * is.base64String('1'); // false
+ * is.base64String(true); // false
+ */
+export const base64 = (val: string): boolean => {
+  if (!val) {
+    return false;
+  }
+
+  const { length } = val;
+
+  if (!length || length % 4 !== 0 || /[^A-Z0-9+\/=]/i.test(val)) {
+    return false;
+  }
+
+  const firstPaddingChar = val.indexOf('=');
+
+  return firstPaddingChar === -1 ||
+    firstPaddingChar === length - 1 ||
+    (firstPaddingChar === length - 2 && val[length - 1] === '=');
+};

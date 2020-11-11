@@ -1,6 +1,36 @@
 import { expect } from 'chai';
+import faker from 'faker';
 
 import is from '../../src';
+
+/**
+ * Generates a random string.
+ *
+ * @returns {string} The random string.
+ */
+function randomString(): string {
+  return faker.random.alphaNumeric(
+    faker.random.number({
+      min: 1,
+      max: 1000
+    })
+  );
+}
+
+/**
+ * Encodes a values as base64 using any available method.
+ *
+ * @param {any} val The value to encode.
+ *
+ * @returns {string} The encoded value.
+ */
+function b64(val: any): string {
+  if (typeof Buffer === 'function') {
+    return Buffer.from(val).toString('base64');
+  }
+
+  return btoa(val);
+}
 
 describe('[string]', function () {
   describe('.upperCase()', function () {
@@ -195,6 +225,79 @@ describe('[string]', function () {
 
       it('returns false if all given strings are not palindrome', function () {
         expect(['not palindrome', 'te'].some(is.palindrome)).to.be.false;
+      });
+    });
+  });
+
+  describe('.base64()', function () {
+    it('returns true if given value is a base64 string', function () {
+      const base64 = b64(randomString());
+
+      expect(is.base64(base64)).to.be.true;
+    });
+
+    it('returns false if given value is not a base64 string', function () {
+      expect(is.base64('nope...')).to.be.false;
+      expect(is.base64('false')).to.be.false;
+      expect(is.base64('123')).to.be.false;
+      expect(is.base64(undefined)).to.be.false;
+      expect(is.base64(null)).to.be.false;
+      expect(is.base64('1')).to.be.false;
+    });
+
+    describe('> not', function () {
+      it('returns false if given value is a base64 string', function () {
+        const base64 = b64('a nice string');
+
+        expect(!is.base64(base64)).to.be.false;
+      });
+
+      it('returns true if given value is not a base64 string', function () {
+        expect(!is.base64('nope...')).to.be.true;
+        expect(!is.base64('false')).to.be.true;
+        expect(!is.base64('123')).to.be.true;
+        expect(!is.base64('1')).to.be.true;
+      });
+    });
+
+    describe('> every', function () {
+      it('returns true if all given values are base64 strings', function () {
+        const strings = [...new Array(100)].map(() => b64(randomString()));
+
+        expect(strings.every(is.base64)).to.be.true;
+      });
+
+      it('returns false if any given value is not a base64 string', function () {
+        const strings = [...new Array(99)].map(() => b64(randomString()));
+
+        strings.push(randomString());
+
+        expect(strings.every(is.base64)).to.be.false;
+      });
+    });
+
+    describe('> some', function () {
+      it('returns true if any given value is a base64 string', function () {
+        const strings = [...new Array(99)].map(() => {
+          if (Math.random() >= 0.5) {
+            return b64(randomString());
+          }
+
+          return randomString();
+        });
+
+        // Ensure there's at least one base64 value
+        strings.push(b64(randomString()));
+
+        expect(strings.some(is.base64)).to.be.true;
+      });
+
+      it('returns false if all given values are not a base64 string', function () {
+        const strings = [...new Array(100)].map(() => [...new Array(2)].map(() =>
+          Math.random().toString(36).substring(2, 15)).join(' ') // Not base 64 string
+        );
+
+        expect(strings.some(is.base64)).to.be.false;
       });
     });
   });

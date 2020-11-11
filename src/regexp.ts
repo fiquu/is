@@ -125,22 +125,6 @@ export const dateString = (val: string): boolean =>
     .test(val);
 
 /**
- * Checks for a valid base64 string.
- *
- * @param {any} val The value to check.
- *
- * @returns {boolean} Whether the value is a base64 string.
- *
- * @example
- * is.base64String('ZmktaXM='); // true
- * is.base64String('1'); // false
- * is.base64String(true); // false
- */
-export const base64 = (val: string): boolean =>
-  /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
-    .test(val);
-
-/**
  * Checks for a valid north american number plan formatted value.
  *
  * @param {any} val The value to check.
