@@ -1,4 +1,4 @@
-import { number } from '../type';
+import isNumber from '../type/number';
 
 /**
  * Checks if the given number is between the given minimum and maximum (inclusive).
@@ -17,4 +17,4 @@ import { number } from '../type';
  * is.between(10, 30, 50); // false
  */
 export default (num: number, min: number, max: number): boolean =>
-  [num, min, max].every(number) && num >= min && num <= max;
+  [num, min, max].every(isNumber) && num >= min && num <= max;

@@ -1,4 +1,4 @@
-import { number } from '../type';
+import isNumber from '../type/number';
 
 /**
  * Checks if the given number is negative.
@@ -11,4 +11,4 @@ import { number } from '../type';
  * is.negative(-3); // true
  * is.negative(2); // false
  */
-export default (num: number): boolean => number(num) && num < 0;
+export default (num: number): boolean => isNumber(num) && num < 0;

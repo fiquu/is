@@ -1,4 +1,4 @@
-import { number } from "../type";
+import isNumber from '../type/number';
 
 /**
  * Checks if the given number is greater than the given minimum.
@@ -14,4 +14,4 @@ import { number } from "../type";
  * is.above(3, 3); // false
  */
 export default (num: number, min: number): boolean =>
-  number(num) && number(min) && num > min;
+  isNumber(num) && isNumber(min) && num > min;

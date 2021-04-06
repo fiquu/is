@@ -1,4 +1,4 @@
-import { number } from '../type';
+import isNumber from '../type/number';
 
 /**
  * Checks if the given number is within the given minimum and maximum.
@@ -16,4 +16,4 @@ import { number } from '../type';
  * is.within(1, 1, 2); // false
  */
 export default (num: number, min: number, max: number): boolean =>
-  [num, min, max].every(number) && num > min && num < max;
+  [num, min, max].every(isNumber) && num > min && num < max;

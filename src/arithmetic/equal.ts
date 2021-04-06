@@ -1,4 +1,9 @@
-import { number, string, array, regexp, boolean, object } from "../type";
+import number from '../type/number';
+import string from '../type/string';
+import array from '../type/array';
+import regexp from '../type/regexp';
+import boolean from '../type/boolean';
+import object from '../type/object';
 
 /**
  * Checks if the given values are equal.
@@ -14,10 +19,10 @@ import { number, string, array, regexp, boolean, object } from "../type";
  * is.equal([1, 2], ''); // false
  * is.equal(1, 2); // false
  */
-export default (a: any, b: any): boolean => {
+export default (a: unknown | unknown[], b: unknown | unknown[]): boolean => {
   // Check 0 and -0 equity with Infinity and -Infinity.
   if (number(a) && number(b)) {
-    return a === b && 1 / a === 1 / b;
+    return a === b && 1 / (a as number) === 1 / (b as number);
   }
 
   // Check regexps and strings equality.
@@ -32,7 +37,7 @@ export default (a: any, b: any): boolean => {
 
   // Check arrays equality.
   if (array(a) && array(b)) {
-    if (a.length !== b.length) {
+    if ((a as unknown[]).length !== (b as unknown[]).length) {
       return false;
     }
 

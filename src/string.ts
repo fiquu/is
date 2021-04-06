@@ -1,5 +1,5 @@
 import { truthy } from './presence';
-import { string } from './type';
+import isString from './type/string';
 
 /**
  * Checks if the given string is all in uppercase.
@@ -13,7 +13,8 @@ import { string } from './type';
  * is.upperCase('FooBaR'); // false
  * is.upperCase('foobar'); // false
  */
-export const upperCase = (str: string): boolean => string(str) && str === str.toUpperCase();
+export const upperCase = (str: string): boolean =>
+  isString(str) && str === str.toUpperCase();
 
 /**
  * Checks if the given string is all in lowercase.
@@ -27,7 +28,8 @@ export const upperCase = (str: string): boolean => string(str) && str === str.to
  * is.lowerCase('FooBaR'); // false
  * is.lowerCase('FOOBAR'); // false
  */
-export const lowerCase = (str: string): boolean => string(str) && str === str.toLowerCase();
+export const lowerCase = (str: string): boolean =>
+  isString(str) && str === str.toLowerCase();
 
 /**
  * Checks if the given string is word-capitalized.
@@ -69,7 +71,7 @@ export const capitalized = (str: string): boolean => {
  * is.palindrome('bar'); // false
  */
 export const palindrome = (str: string): boolean =>
-  string(str) && str === str.split('').reverse().join('');
+  isString(str) && str === str.split('').reverse().join('');
 
 /**
  * Checks for a valid base64 string.
@@ -98,7 +100,9 @@ export const base64 = (val: string): boolean => {
 
   const firstPaddingChar = val.indexOf('=');
 
-  return firstPaddingChar === -1 ||
+  return (
+    firstPaddingChar === -1 ||
     firstPaddingChar === length - 1 ||
-    (firstPaddingChar === length - 2 && val[length - 1] === '=');
+    (firstPaddingChar === length - 2 && val[length - 1] === '=')
+  );
 };

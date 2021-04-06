@@ -1,25 +1,25 @@
-export { default as equal } from './equal';
+export { default as isEqual } from './equal';
 
-export { default as even } from './even';
+export { default as isEven } from './even';
 
-export { default as odd } from './odd';
+export { default as isOdd } from './odd';
 
-export { default as positive } from './positive';
+export { default as isPositive } from './positive';
 
-export { default as negative } from './negative';
+export { default as isNegative } from './negative';
 
-export { default as above } from './above';
+export { default as isAbove } from './above';
 
-export { default as under } from './under';
+export { default as isUnder } from './under';
 
-export { default as within } from './within';
+export { default as isWithin } from './within';
 
-export { default as between } from './between';
+export { default as isBetween } from './between';
 
-export { default as float } from './float';
+export { default as isFloat } from './float';
 
-export { default as int } from './int';
+export { default as isInt } from './int';
 
-export { default as finite } from './finite';
+export { default as isFinite } from './finite';
 
-export { default as infinite } from './infinite';
+export { default as isInfinite } from './infinite';

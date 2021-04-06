@@ -1,4 +1,4 @@
-import { number } from "../type";
+import isNumber from '../type/number';
 
 /**
  * Checks if the given number is even.
@@ -11,4 +11,4 @@ import { number } from "../type";
  * is.even(2); // true
  * is.even(3); // false
  */
-export default (num: number): boolean => number(num) && num % 2 === 0;
+export default (num: number): boolean => isNumber(num) && num % 2 === 0;

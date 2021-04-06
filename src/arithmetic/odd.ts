@@ -1,4 +1,4 @@
-import { number } from '../type';
+import isNumber from '../type/number';
 
 /**
  * Checks if the given number is odd.
@@ -11,4 +11,4 @@ import { number } from '../type';
  * is.odd(3); // true
  * is.odd(2); // false
  */
-export default (num: number): boolean => number(num) && num % 2 === 1;
+export default (num: number): boolean => isNumber(num) && num % 2 === 1;

@@ -1,4 +1,4 @@
-import { number } from '../type';
+import isNumber from '../type/number';
 
 /**
  * Checks if the given number is a float.
@@ -11,4 +11,4 @@ import { number } from '../type';
  * is.float(13.45); // true
  * is.float(13); // false
  */
-export default (num: number): boolean => number(num) && num % 1 !== 0;
+export default (num: number): boolean => isNumber(num) && num % 1 !== 0;
