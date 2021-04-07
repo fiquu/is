@@ -9,5 +9,5 @@
  * is.windowObject(window); // true
  * is.windowObject({}); // false
  */
-export default (obj: unknown): boolean =>
+export const isWindowObject = (obj: unknown): boolean =>
   typeof obj === 'object' && 'navigator' in obj && 'location' in obj;

@@ -1,5 +1,5 @@
-import isNan from '../type/nan';
-import exists from './exists';
+import { isNan } from '../type/nan';
+import { exists } from './exists';
 
 /**
  * Checks if the given value is truthy.
@@ -18,5 +18,5 @@ import exists from './exists';
  * is.truthy(false); // false
  * is.truthy(NaN); // false
  */
-export default (val: unknown): boolean =>
+export const isTruthy = (val: unknown): boolean =>
   exists(val) && val !== false && !isNan(val) && val !== '' && val !== 0;

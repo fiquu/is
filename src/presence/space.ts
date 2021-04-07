@@ -1,4 +1,4 @@
-import isChar from '../type/char';
+import { isChar } from '../type/char';
 
 /**
  * Checks if the given value is a space character. Checks for horizontal tab (9), line feed (10), vertical tab (11),
@@ -13,7 +13,7 @@ import isChar from '../type/char';
  * is.space('a');   // false
  * is.space('foo'); // false
  */
-export default (val: string): boolean => {
+export const isSpace = (val: string): boolean => {
   if (isChar(val)) {
     const code = val.charCodeAt(0);
 

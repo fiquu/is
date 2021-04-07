@@ -11,4 +11,4 @@ import isNumber from '../type/number';
  * is.int(13); // true
  * is.int(13.5); // false
  */
-export default (num: number): boolean => isNumber(num) && num % 1 === 0;
+export const isInt = (num: number): boolean => isNumber(num) && num % 1 === 0;

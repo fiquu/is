@@ -10,5 +10,5 @@
  * is.object(function () {}); // false
  * is.object('not object'); // false
  */
-export default (val: unknown): boolean =>
+export const isObject = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object Object]';

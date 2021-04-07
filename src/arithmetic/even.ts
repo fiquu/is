@@ -11,4 +11,4 @@ import isNumber from '../type/number';
  * is.even(2); // true
  * is.even(3); // false
  */
-export default (num: number): boolean => isNumber(num) && num % 2 === 0;
+export const isEven = (num: number): boolean => isNumber(num) && num % 2 === 0;

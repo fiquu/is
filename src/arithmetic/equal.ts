@@ -19,7 +19,10 @@ import object from '../type/object';
  * is.equal([1, 2], ''); // false
  * is.equal(1, 2); // false
  */
-export default (a: unknown | unknown[], b: unknown | unknown[]): boolean => {
+export const isEqual = (
+  a: unknown | unknown[],
+  b: unknown | unknown[]
+): boolean => {
   // Check 0 and -0 equity with Infinity and -Infinity.
   if (number(a) && number(b)) {
     return a === b && 1 / (a as number) === 1 / (b as number);

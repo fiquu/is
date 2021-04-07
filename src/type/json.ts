@@ -1,4 +1,4 @@
-import isString from './string';
+import { isString } from './string';
 
 /**
  * Checks if the given value is a JSON string.
@@ -12,7 +12,7 @@ import isString from './string';
  * is.json({}); // false
  * is.json('not json'); // false
  */
-export default (val: string): boolean => {
+export const isJson = (val: string): boolean => {
   if (!isString(val)) {
     return false;
   }

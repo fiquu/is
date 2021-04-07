@@ -10,7 +10,7 @@
  * is.bool(false); // true
  * is.bool('not boolean'); // false
  */
-export default (val: unknown): boolean =>
+export const isBoolean = (val: unknown): boolean =>
   val === true ||
   val === false ||
   Object.prototype.toString.call(val) === '[object Boolean]';

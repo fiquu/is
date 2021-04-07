@@ -1,4 +1,4 @@
-import isNan from './nan';
+import { isNan } from './nan';
 
 /**
  * Checks if the given value is a number.
@@ -12,5 +12,5 @@ import isNan from './nan';
  * is.number(3.5); // true
  * is.number('not number'); // false
  */
-export default (val: unknown): boolean =>
+export const isNumber = (val: unknown): boolean =>
   !isNan(val) && Object.prototype.toString.call(val) === '[object Number]';

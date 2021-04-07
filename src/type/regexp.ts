@@ -11,5 +11,5 @@
  * is.regexp({}); // false
  * is.regexp('not regexp'); // false
  */
-export default (val: unknown): boolean =>
+export const isRegExp = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object RegExp]';

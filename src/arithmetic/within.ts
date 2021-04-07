@@ -15,5 +15,5 @@ import isNumber from '../type/number';
  * is.within(0, 1, 3); // false
  * is.within(1, 1, 2); // false
  */
-export default (num: number, min: number, max: number): boolean =>
+export const isWithin = (num: number, min: number, max: number): boolean =>
   [num, min, max].every(isNumber) && num > min && num < max;

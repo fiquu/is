@@ -11,4 +11,4 @@ import isNumber from '../type/number';
  * is.negative(-3); // true
  * is.negative(2); // false
  */
-export default (num: number): boolean => isNumber(num) && num < 0;
+export const isNegative = (num: number): boolean => isNumber(num) && num < 0;

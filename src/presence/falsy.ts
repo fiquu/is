@@ -1,4 +1,4 @@
-import isTruthy from './truthy';
+import { isTruthy } from './truthy';
 
 /**
  * Checks if the given value is falsy.
@@ -17,4 +17,4 @@ import isTruthy from './truthy';
  * is.falsy('a string'); // false
  * is.falsy(1); // false
  */
-export default (val: unknown): boolean => !isTruthy(val);
+export const isFalsy = (val: unknown): boolean => !isTruthy(val);

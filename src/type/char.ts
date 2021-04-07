@@ -1,4 +1,4 @@
-import isString from './string';
+import { isString } from './string';
 
 /**
  * Checks if the given value is a single char.
@@ -13,4 +13,5 @@ import isString from './string';
  * is.char(1); // false
  * is.char(null); // false
  */
-export default (val: string): boolean => isString(val) && val.length === 1;
+export const isChar = (val: string): boolean =>
+  isString(val) && val.length === 1;

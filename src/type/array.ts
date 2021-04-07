@@ -9,4 +9,4 @@
  * is.array([]); // true
  * is.array('not array'); // false
  */
-export default (val: unknown): boolean => Array.isArray(val);
+export const isArray = (val: unknown): boolean => Array.isArray(val);

@@ -9,5 +9,5 @@
  * is.error(new Error()); // true
  * is.error('not error'); // false
  */
-export default (val: unknown): boolean =>
+export const isError = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object Error]';

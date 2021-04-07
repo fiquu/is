@@ -11,4 +11,4 @@
  * is.function('not NaN'); // false
  * is.function(null); // false
  */
-export default (val: unknown): boolean => val !== val;
+export const isNan = (val: unknown): boolean => val !== val;

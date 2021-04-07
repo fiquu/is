@@ -1,5 +1,5 @@
-import isObject from '../type/object';
-import isNumber from '../type/number';
+import { isObject } from '../type/object';
+import { isNumber } from '../type/number';
 
 /**
  * Checks if the given object has the given number of properties.
@@ -13,7 +13,7 @@ import isNumber from '../type/number';
  * is.propCount({wer: 'asd'}, 1); // true
  * is.propCount({}, 5); // false
  */
-export default (obj: unknown, count: number): boolean => {
+export const hasPropCount = (obj: unknown, count: number): boolean => {
   if (!isObject(obj) || !isNumber(count)) {
     return false;
   }

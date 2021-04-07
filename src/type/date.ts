@@ -9,5 +9,5 @@
  * is.date(new Date()); // true
  * is.date('not date'); // false
  */
-export default (val: unknown): boolean =>
+export const isDate = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object Date]';

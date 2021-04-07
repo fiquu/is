@@ -9,4 +9,5 @@
  * is.undef(undefined); // true
  * is.undef('not undefined'); // false
  */
-export default (val: unknown): boolean => val === void 0 || val === undefined;
+export const isUndefined = (val: unknown): boolean =>
+  val === void 0 || val === undefined;

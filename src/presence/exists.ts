@@ -11,4 +11,5 @@
  * is.existy(undefined); // false
  * is.existy(null); // false
  */
-export default (val: unknown): boolean => val !== null && val !== undefined;
+export const exists = (val: unknown): boolean =>
+  val !== null && val !== undefined;

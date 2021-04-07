@@ -1,4 +1,4 @@
-import isNan from './nan';
+import { isNan } from './nan';
 
 /**
  * Checks if the given values are of same type preventing NaN and Number same type check.
@@ -14,7 +14,7 @@ import isNan from './nan';
  * is.sameType({}, []); // false
  * is.sameType('', null); // false
  */
-export default (a: unknown, b: unknown): boolean => {
+export const isSameType = (a: unknown, b: unknown): boolean => {
   if (isNan(a) || isNan(b)) {
     return isNan(a) && isNan(b);
   }

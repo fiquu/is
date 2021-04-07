@@ -11,4 +11,4 @@ import isNumber from '../type/number';
  * is.float(13.45); // true
  * is.float(13); // false
  */
-export default (num: number): boolean => isNumber(num) && num % 1 !== 0;
+export const isFloat = (num: number): boolean => isNumber(num) && num % 1 !== 0;

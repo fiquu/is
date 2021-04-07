@@ -1,5 +1,5 @@
-import isObject from '../type/object';
-import isString from '../type/string';
+import { isObject } from '../type/object';
+import { isString } from '../type/string';
 
 /**
  * Checks if the given object has the given property.
@@ -13,5 +13,5 @@ import isString from '../type/string';
  * is.propertyDefined({wer: 'asd'}, 'wer'); // true
  * is.propertyDefined({}, 'wer'); // false
  */
-export default (obj: unknown, prop: string): boolean =>
+export const hasPropDefined = (obj: unknown, prop: string): boolean =>
   isObject(obj) && isString(prop) && prop in (obj as Record<string, unknown>);

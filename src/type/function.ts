@@ -9,7 +9,7 @@
  * is.func(function () {}); // true
  * is.func('not function'); // false
  */
-export default (val: unknown): boolean =>
+export const isFunction = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object Function]' ||
   Object.prototype.toString.call(val) === '[object AsyncFunction]' ||
   typeof val === 'function';

@@ -11,5 +11,5 @@
  * is.string({}); // false
  * is.string([]); // false
  */
-export default (val: unknown): boolean =>
+export const isString = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object String]';

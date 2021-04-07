@@ -13,5 +13,5 @@ import isNumber from '../type/number';
  * is.above(2, 3); // false
  * is.above(3, 3); // false
  */
-export default (num: number, min: number): boolean =>
+export const isAbove = (num: number, min: number): boolean =>
   isNumber(num) && isNumber(min) && num > min;

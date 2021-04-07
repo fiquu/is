@@ -1,12 +1,12 @@
-import isNan from '../type/nan';
-import isString from '../type/string';
-import isArray from '../type/array';
-import isBoolean from '../type/boolean';
-import isNumber from '../type/number';
-import isDate from '../type/date';
-import isObject from '../type/object';
-import isFunction from '../type/function';
-import exists from './exists';
+import { isNan } from '../type/nan';
+import { isString } from '../type/string';
+import { isArray } from '../type/array';
+import { isBoolean } from '../type/boolean';
+import { isNumber } from '../type/number';
+import { isDate } from '../type/date';
+import { isObject } from '../type/object';
+import { isFunction } from '../type/function';
+import { exists } from './exists';
 
 /**
  * Checks if the given object is empty. Treats null and undefined as such.
@@ -32,7 +32,7 @@ import exists from './exists';
  * is.empty(['not', 'empty']); // false
  * is.empty('not empty'); // false
  */
-export default (val: unknown): boolean => {
+export const isEmpty = (val: unknown): boolean => {
   if (!exists(val)) {
     return true;
   }

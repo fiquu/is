@@ -11,7 +11,7 @@
  * is.domNode('not DOM node'); // false
  * is.domNode(0); // false
  */
-export default (obj: unknown): boolean =>
+export const isDomNode = (obj: unknown): boolean =>
   typeof obj === 'object' &&
   typeof (obj as Node).nodeType === 'number' &&
   (obj as Node).nodeType === 1;

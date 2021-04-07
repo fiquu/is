@@ -1,4 +1,4 @@
-import isEqual from '../arithmetic/equal';
+import { isEqual } from '../arithmetic/equal';
 
 /**
  * Checks if the given value is in the given array.
@@ -12,5 +12,5 @@ import isEqual from '../arithmetic/equal';
  * is.inArray(1, [1, 2, 3]); // true
  * is.inArray('wer', [1, 2, 3]); // false
  */
-export default (val: unknown, arr: unknown[]): boolean =>
+export const isInArray = (val: unknown, arr: unknown[]): boolean =>
   Boolean(arr.find(i => isEqual(i, val)));
