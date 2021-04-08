@@ -1,5 +1,4 @@
 import ua from 'useragent-generator';
-import { JSDOM } from 'jsdom';
 import { expect } from 'chai';
 
 const window = {
@@ -18,113 +17,18 @@ Object.defineProperty(global, 'window', {
   value: window
 });
 
-import is from '../../src';
-
 describe('[environment]', function () {
-  describe('.windowObject()', function () {
-    const { window } = new JSDOM();
-
-    it('returns true if given object is window object', function () {
-      expect(is.windowObject(window)).to.be.true;
-    });
-
-    it('returns false if given object !is.window object', function () {
-      expect(is.windowObject({})).to.be.false;
-    });
-
-    describe('not', function () {
-      it('returns false if given object is window object', function () {
-        expect(!is.windowObject(window)).to.be.false;
-      });
-
-      it('returns true if given object is nor window object', function () {
-        expect(!is.windowObject({})).to.be.true;
-      });
-    });
-
-    describe('every', function () {
-      it('returns true if all given objects are window object', function () {
-        expect([window, window].every(is.windowObject)).to.be.true;
-      });
-
-      it('returns false if any given object !is.window object', function () {
-        expect([{}, window].every(is.windowObject)).to.be.false;
-      });
-    });
-
-    describe('some', function () {
-      it('returns true if any given object is window object', function () {
-        expect([window, {}].some(is.windowObject)).to.be.true;
-      });
-
-      it('returns false if all given objects are not window object', function () {
-        expect([{}, {}].some(is.windowObject)).to.be.false;
-      });
-    });
-  });
-
-  describe('.domNode()', function () {
-    const { window } = new JSDOM();
-
-    it('returns true if given object is a DOM node', function () {
-      const obj = window.document.createElement('div');
-
-      expect(is.domNode(obj)).to.be.true;
-    });
-
-    it('returns false if given object !is.a DOM node', function () {
-      expect(is.domNode({})).to.be.false;
-    });
-
-    describe('not', function () {
-      it('returns false if given object is a DOM node', function () {
-        const obj = window.document.createElement('span');
-
-        expect(!is.domNode(obj)).to.be.false;
-      });
-
-      it('returns true if given object !is.a DOM node', function () {
-        expect(!is.domNode({})).to.be.true;
-      });
-    });
-
-    describe('some', function () {
-      it('returns true if any given object is a DOM node', function () {
-        const obj = window.document.createElement('blockquote');
-
-        expect([window, obj, obj].some(is.domNode)).to.be.true;
-      });
-
-      it('returns false if all given objects are not DOM nodes', function () {
-        expect([{}, {}].some(is.domNode)).to.be.false;
-      });
-    });
-
-    describe('every', function () {
-      it('returns true if all given objects are DOM nodes', function () {
-        const na = window.document.createElement('em');
-        const nb = window.document.createElement('a');
-
-        expect([na, nb].every(is.domNode)).to.be.true;
-      });
-
-      it('returns false if any given object is not DOM node', function () {
-        expect([{}, window].every(is.domNode)).to.be.false;
-      });
-    });
-  });
-
   describe('.firefox()', function () {
     it('returns true if current env is Firefox', function () {
       window.navigator.userAgent = ua.firefox(75);
 
-      expect(is.firefox()).to.be.true;
+      expect(isFirefox()).to.be.true;
     });
 
     it('returns false if current env is not Firefox', function () {
       window.navigator.userAgent = ua.edge(15);
 
-      expect(is.firefox()).to.be.false;
+      expect(isFirefox()).to.be.false;
     });
   });
 
@@ -217,13 +121,13 @@ describe('[environment]', function () {
     it('returns true if current env is Facebook', function () {
       window.navigator.userAgent = `FB_IAB/${ua.chrome(80)}`;
 
-      expect(is.facebook()).to.be.true;
+      expect(isFacebook()).to.be.true;
     });
 
     it('returns false if current env is not Facebook', function () {
       window.navigator.userAgent = ua.chrome(80);
 
-      expect(is.facebook()).to.be.false;
+      expect(isFacebook()).to.be.false;
     });
   });
 
@@ -370,14 +274,14 @@ describe('[environment]', function () {
       window.navigator.userAgent = ua.chrome(80);
       window.navigator.appVersion = '5.0 (Win)';
 
-      expect(is.windows()).to.be.true;
+      expect(isWindows()).to.be.true;
     });
 
     it('returns false if current env is not Windows', function () {
       window.navigator.userAgent = ua.chrome(80);
       window.navigator.appVersion = '5.0 (X11)';
 
-      expect(is.windows()).to.be.false;
+      expect(isWindows()).to.be.false;
     });
   });
 
@@ -386,13 +290,13 @@ describe('[environment]', function () {
       window.navigator.userAgent = ua.ie.windowsPhone('9.0.1');
       window.navigator.appVersion = '5.0 (Win)';
 
-      expect(is.windowsPhone()).to.be.true;
+      expect(isWindowsPhone()).to.be.true;
     });
 
     it('returns false if current env is not Windows Phone', function () {
       window.navigator.userAgent = ua.chrome(80);
 
-      expect(is.windowsPhone()).to.be.false;
+      expect(isWindowsPhone()).to.be.false;
     });
   });
 
@@ -401,13 +305,13 @@ describe('[environment]', function () {
       window.navigator.userAgent = `touch/${ua.chrome(80)}`;
       window.navigator.appVersion = '5.0 (Win)';
 
-      expect(is.windowsTablet()).to.be.true;
+      expect(isWindowsTablet()).to.be.true;
     });
 
     it('returns false if current env is not Windows Tablet', function () {
       window.navigator.userAgent = ua.chrome(80);
 
-      expect(is.windowsTablet()).to.be.false;
+      expect(isWindowsTablet()).to.be.false;
     });
   });
 
@@ -443,13 +347,13 @@ describe('[environment]', function () {
     it('returns true if current env is desktop', function () {
       window.navigator.userAgent = ua.chrome(80);
 
-      expect(is.desktop()).to.be.true;
+      expect(isDesktop()).to.be.true;
     });
 
     it('returns false if current env is not desktop', function () {
       window.navigator.userAgent = ua.chrome.androidTablet(80);
 
-      expect(is.desktop()).to.be.false;
+      expect(isDesktop()).to.be.false;
     });
   });
 

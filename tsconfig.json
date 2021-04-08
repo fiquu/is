@@ -9,10 +9,6 @@
     "target": "ES2020",
     "outDir": "lib"
   },
-  "exclude": [
-    "tests/**/*.spec.ts"
-  ],
-  "include": [
-    "src/**/*.ts"
-  ]
+  "exclude": ["tests/**/*.spec.ts"],
+  "include": ["src/**/*.ts"]
 }
