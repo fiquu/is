@@ -8,13 +8,13 @@ import { isTruthy } from './truthy';
  * @returns {boolean} Whether the value is falsy.
  *
  * @example
- * is.falsy(0); // true
- * is.falsy(null); // true
- * is.falsy(undefined); // true
- * is.falsy(NaN); // true
- * is.falsy(false); // true
- * is.falsy(true); // false
- * is.falsy('a string'); // false
- * is.falsy(1); // false
+ * isFalsy(0); // true
+ * isFalsy(null); // true
+ * isFalsy(undefined); // true
+ * isFalsy(NaN); // true
+ * isFalsy(false); // true
+ * isFalsy(true); // false
+ * isFalsy('a string'); // false
+ * isFalsy(1); // false
  */
 export const isFalsy = (val: unknown): boolean => !isTruthy(val);

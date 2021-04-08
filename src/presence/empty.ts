@@ -16,21 +16,21 @@ import { exists } from './exists';
  * @returns {boolean} Whether the value is empty.
  *
  * @example
- * is.empty({}); // true
- * is.empty(''); // true
- * is.empty([]); // true
- * is.empty(new Date('invalid date')); // true
- * is.empty(null); // true
- * is.empty(undefined); // true
- * is.empty(0); // false
- * is.empty(-1); // false
- * is.empty(1); // false
- * is.empty(true); // false
- * is.empty(false); // false
- * is.empty(new Date()); // false
- * is.empty({ not: 'empty' }); // false
- * is.empty(['not', 'empty']); // false
- * is.empty('not empty'); // false
+ * isEmpty({}); // true
+ * isEmpty(''); // true
+ * isEmpty([]); // true
+ * isEmpty(new Date('invalid date')); // true
+ * isEmpty(null); // true
+ * isEmpty(undefined); // true
+ * isEmpty(0); // false
+ * isEmpty(-1); // false
+ * isEmpty(1); // false
+ * isEmpty(true); // false
+ * isEmpty(false); // false
+ * isEmpty(new Date()); // false
+ * isEmpty({ not: 'empty' }); // false
+ * isEmpty(['not', 'empty']); // false
+ * isEmpty('not empty'); // false
  */
 export const isEmpty = (val: unknown): boolean => {
   if (!exists(val)) {

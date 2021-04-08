@@ -1,4 +1,4 @@
-import isNumber from '../type/number';
+import { isNumber } from '../type/number';
 
 /**
  * Checks if the given number is an int.
@@ -8,7 +8,7 @@ import isNumber from '../type/number';
  * @returns {boolean} Whether the number is an int.
  *
  * @example
- * is.int(13); // true
- * is.int(13.5); // false
+ * isInt(13); // true
+ * isInt(13.5); // false
  */
 export const isInt = (num: number): boolean => isNumber(num) && num % 1 === 0;

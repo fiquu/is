@@ -6,8 +6,8 @@
  * @returns {boolean} Whether the value is undefined.
  *
  * @example
- * is.undef(undefined); // true
- * is.undef('not undefined'); // false
+ * isUndefined(undefined); // true
+ * isUndefined('not undefined'); // false
  */
 export const isUndefined = (val: unknown): boolean =>
   val === void 0 || val === undefined;

@@ -6,8 +6,8 @@
  * @returns {boolean} Whether the value is a date object.
  *
  * @example
- * is.date(new Date()); // true
- * is.date('not date'); // false
+ * isDate(new Date()); // true
+ * isDate('not date'); // false
  */
 export const isDate = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object Date]';

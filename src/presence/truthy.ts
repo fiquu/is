@@ -9,14 +9,14 @@ import { exists } from './exists';
  * @returns {boolean} Whether the value is truthy.
  *
  * @example
- * is.truthy(true); // true
- * is.truthy('a string'); // true
- * is.truthy(1); // true
- * is.truthy(0); // false
- * is.truthy(null); // false
- * is.truthy(undefined); // false
- * is.truthy(false); // false
- * is.truthy(NaN); // false
+ * isTruthy(true); // true
+ * isTruthy('a string'); // true
+ * isTruthy(1); // true
+ * isTruthy(0); // false
+ * isTruthy(null); // false
+ * isTruthy(undefined); // false
+ * isTruthy(false); // false
+ * isTruthy(NaN); // false
  */
 export const isTruthy = (val: unknown): boolean =>
   exists(val) && val !== false && !isNan(val) && val !== '' && val !== 0;

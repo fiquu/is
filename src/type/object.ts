@@ -6,9 +6,9 @@
  * @returns {boolean} Whether the value is an object.
  *
  * @example
- * is.object({}); // true
- * is.object(function () {}); // false
- * is.object('not object'); // false
+ * isObject({}); // true
+ * isObject(function () {}); // false
+ * isObject('not object'); // false
  */
 export const isObject = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object Object]';

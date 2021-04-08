@@ -6,10 +6,10 @@
  * @returns {boolean} Whether the value is not null or undefined.
  *
  * @example
- * is.existy(123); // true
- * is.existy(0); // true
- * is.existy(undefined); // false
- * is.existy(null); // false
+ * isExisty(123); // true
+ * isExisty(0); // true
+ * isExisty(undefined); // false
+ * isExisty(null); // false
  */
 export const exists = (val: unknown): boolean =>
   val !== null && val !== undefined;

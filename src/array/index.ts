@@ -1,3 +1,3 @@
-export { isInArray } from './inArray';
+export { isInArray } from './in-array';
 
 export { isSorted } from './sorted';

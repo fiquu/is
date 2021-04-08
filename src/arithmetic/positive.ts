@@ -1,4 +1,4 @@
-import isNumber from '../type/number';
+import { isNumber } from '../type/number';
 
 /**
  * Checks if the given number is positive.
@@ -8,7 +8,7 @@ import isNumber from '../type/number';
  * @returns {boolean} Whether the number is positive.
  *
  * @example
- * is.positive(2); // true
- * is.positive(-3); // false
+ * isPositive(2); // true
+ * isPositive(-3); // false
  */
 export const isPositive = (num: number): boolean => isNumber(num) && num > 0;

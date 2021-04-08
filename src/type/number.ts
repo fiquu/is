@@ -8,9 +8,9 @@ import { isNan } from './nan';
  * @returns {boolean} Whether the value is a number.
  *
  * @example
- * is.number(0); // true
- * is.number(3.5); // true
- * is.number('not number'); // false
+ * isNumber(0); // true
+ * isNumber(3.5); // true
+ * isNumber('not number'); // false
  */
 export const isNumber = (val: unknown): boolean =>
   !isNan(val) && Object.prototype.toString.call(val) === '[object Number]';

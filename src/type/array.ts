@@ -6,7 +6,7 @@
  * @returns {boolean} Whether the value is an array.
  *
  * @example
- * is.array([]); // true
- * is.array('not array'); // false
+ * isArray([]); // true
+ * isArray('not array'); // false
  */
 export const isArray = (val: unknown): boolean => Array.isArray(val);

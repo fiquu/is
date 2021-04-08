@@ -7,8 +7,8 @@
  * @returns {boolean} Whether the value is NaN.
  *
  * @example
- * is.function(NaN); // true
- * is.function('not NaN'); // false
- * is.function(null); // false
+ * isNan(NaN); // true
+ * isNan('not NaN'); // false
+ * isNan(null); // false
  */
 export const isNan = (val: unknown): boolean => val !== val;

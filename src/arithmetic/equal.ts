@@ -1,9 +1,9 @@
-import number from '../type/number';
-import string from '../type/string';
-import array from '../type/array';
-import regexp from '../type/regexp';
-import boolean from '../type/boolean';
-import object from '../type/object';
+import { isNumber } from '../type/number';
+import { isString } from '../type/string';
+import { isArray } from '../type/array';
+import { isRegExp } from '../type/regexp';
+import { isBoolean } from '../type/boolean';
+import { isObject } from '../type/object';
 
 /**
  * Checks if the given values are equal.
@@ -14,32 +14,32 @@ import object from '../type/object';
  * @returns {boolean} Whether the values are equal.
  *
  * @example
- * is.equal(1, 1); // true
- * is.equal([1, 2, 3], [1, 2, 3]); // true
- * is.equal([1, 2], ''); // false
- * is.equal(1, 2); // false
+ * isEqual(1, 1); // true
+ * isEqual([1, 2, 3], [1, 2, 3]); // true
+ * isEqual([1, 2], ''); // false
+ * isEqual(1, 2); // false
  */
 export const isEqual = (
   a: unknown | unknown[],
   b: unknown | unknown[]
 ): boolean => {
   // Check 0 and -0 equity with Infinity and -Infinity.
-  if (number(a) && number(b)) {
+  if (isNumber(a) && isNumber(b)) {
     return a === b && 1 / (a as number) === 1 / (b as number);
   }
 
   // Check regexps and strings equality.
-  if ((string(a) && string(b)) || (regexp(a) && regexp(b))) {
+  if ((isString(a) && isString(b)) || (isRegExp(a) && isRegExp(b))) {
     return String(a) === String(b);
   }
 
   // Check booleans equality.
-  if (boolean(a) && boolean(b)) {
+  if (isBoolean(a) && isBoolean(b)) {
     return a === b;
   }
 
   // Check arrays equality.
-  if (array(a) && array(b)) {
+  if (isArray(a) && isArray(b)) {
     if ((a as unknown[]).length !== (b as unknown[]).length) {
       return false;
     }
@@ -48,7 +48,7 @@ export const isEqual = (
   }
 
   // Check objects equality.
-  if (object(a) && object(b)) {
+  if (isObject(a) && isObject(b)) {
     if (Object.keys(a).length !== Object.keys(b).length) {
       return false;
     }

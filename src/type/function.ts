@@ -6,8 +6,9 @@
  * @returns {boolean} Whether the value is a function.
  *
  * @example
- * is.func(function () {}); // true
- * is.func('not function'); // false
+ * isFunction(async function () {}); // true
+ * isFunction(function () {}); // true
+ * isFunction('not function'); // false
  */
 export const isFunction = (val: unknown): boolean =>
   Object.prototype.toString.call(val) === '[object Function]' ||

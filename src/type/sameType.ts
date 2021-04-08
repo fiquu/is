@@ -9,10 +9,10 @@ import { isNan } from './nan';
  * @returns {boolean} Whether the values are of same type.
  *
  * @example
- * is.sameType(true, false); // true
- * is.sameType(1, 3); // true
- * is.sameType({}, []); // false
- * is.sameType('', null); // false
+ * isSameType(true, false); // true
+ * isSameType(1, 3); // true
+ * isSameType({}, []); // false
+ * isSameType('', null); // false
  */
 export const isSameType = (a: unknown, b: unknown): boolean => {
   if (isNan(a) || isNan(b)) {

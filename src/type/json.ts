@@ -8,9 +8,9 @@ import { isString } from './string';
  * @returns {boolean} Whether the value is a JSON string.
  *
  * @example
- * is.json('{ "some": "value" }'); // true
- * is.json({}); // false
- * is.json('not json'); // false
+ * isJson('{ "some": "value" }'); // true
+ * isJson({}); // false
+ * isJson('not json'); // false
  */
 export const isJson = (val: string): boolean => {
   if (!isString(val)) {

@@ -1,7 +1,7 @@
-export { hasPropCount } from './propCount';
+export { hasPropCount } from './prop-count';
 
-export { hasPropDefined } from './propDefined';
+export { hasPropDefined } from './prop-defined';
 
-export { isWindowObject } from './windowObject';
+export { isWindowObject } from './window-object';
 
-export { isDomNode } from './domNode';
+export { isDomNode } from './dom-node';

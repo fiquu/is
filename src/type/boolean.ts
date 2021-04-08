@@ -6,9 +6,9 @@
  * @returns {boolean} Whether the value is a boolean.
  *
  * @example
- * is.bool(true); // true
- * is.bool(false); // true
- * is.bool('not boolean'); // false
+ * isBool(true); // true
+ * isBool(false); // true
+ * isBool('not boolean'); // false
  */
 export const isBoolean = (val: unknown): boolean =>
   val === true ||

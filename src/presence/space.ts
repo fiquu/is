@@ -9,9 +9,9 @@ import { isChar } from '../type/char';
  * @returns {boolean} Whether the value is a space character.
  *
  * @example
- * is.space(' ');   // true
- * is.space('a');   // false
- * is.space('foo'); // false
+ * isSpace(' ');   // true
+ * isSpace('a');   // false
+ * isSpace('foo'); // false
  */
 export const isSpace = (val: string): boolean => {
   if (isChar(val)) {

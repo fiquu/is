@@ -1,4 +1,4 @@
-import isNumber from '../type/number';
+import { isNumber } from '../type/number';
 
 /**
  * Checks if the given number is even.
@@ -8,7 +8,7 @@ import isNumber from '../type/number';
  * @returns {boolean} Whether the number is even.
  *
  * @example
- * is.even(2); // true
- * is.even(3); // false
+ * isEven(2); // true
+ * isEven(3); // false
  */
 export const isEven = (num: number): boolean => isNumber(num) && num % 2 === 0;

@@ -1,4 +1,4 @@
-import isNumber from '../type/number';
+import { isNumber } from '../type/number';
 
 /**
  * Checks if the given number is odd.
@@ -8,7 +8,7 @@ import isNumber from '../type/number';
  * @returns {boolean} Whether the number is odd.
  *
  * @example
- * is.odd(3); // true
- * is.odd(2); // false
+ * isOdd(3); // true
+ * isOdd(2); // false
  */
 export const isOdd = (num: number): boolean => isNumber(num) && num % 2 === 1;

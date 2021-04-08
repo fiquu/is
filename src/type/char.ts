@@ -8,10 +8,10 @@ import { isString } from './string';
  * @returns {boolean} Whether the value is a single char.
  *
  * @example
- * is.char('a'); // true
- * is.char('foo'); // false
- * is.char(1); // false
- * is.char(null); // false
+ * isChar('a'); // true
+ * isChar('foo'); // false
+ * isChar(1); // false
+ * isChar(null); // false
  */
 export const isChar = (val: string): boolean =>
   isString(val) && val.length === 1;

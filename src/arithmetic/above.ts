@@ -1,4 +1,4 @@
-import isNumber from '../type/number';
+import { isNumber } from '../type/number';
 
 /**
  * Checks if the given number is greater than the given minimum.
@@ -9,9 +9,9 @@ import isNumber from '../type/number';
  * @returns {boolean} Whether the number is greater than the minimum.
  *
  * @example
- * is.above(3, 2); // true
- * is.above(2, 3); // false
- * is.above(3, 3); // false
+ * isAbove(3, 2); // true
+ * isAbove(2, 3); // false
+ * isAbove(3, 3); // false
  */
 export const isAbove = (num: number, min: number): boolean =>
   isNumber(num) && isNumber(min) && num > min;
