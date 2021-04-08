@@ -9,8 +9,8 @@ import { isNumber } from '../type/number';
  * @returns {boolean} Whether the number is less than the maximum.
  *
  * @example
- * isUnder(3, 2); // true
- * isUnder(2, 3); // false
+ * isUnder(2, 3); // true
+ * isUnder(3, 2); // false
  * isUnder(3, 3); // false
  */
 export const isUnder = (num: number, max: number): boolean =>

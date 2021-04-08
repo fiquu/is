@@ -1,7 +1,8 @@
 import { isEqual } from '../arithmetic/equal';
 
 /**
- * Checks if the given value is in the given array.
+ * Checks if the given value is in the given array. Unlike `includes`, it
+ * performs a deeper equality check.
  *
  * @param {any} val The value to search for.
  * @param {any[]} arr The array to search into.

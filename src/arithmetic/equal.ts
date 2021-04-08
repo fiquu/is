@@ -1,9 +1,9 @@
-import { isNumber } from '../type/number';
-import { isString } from '../type/string';
-import { isArray } from '../type/array';
-import { isRegExp } from '../type/regexp';
 import { isBoolean } from '../type/boolean';
+import { isNumber } from '../type/number';
+import { isRegExp } from '../type/regexp';
+import { isString } from '../type/string';
 import { isObject } from '../type/object';
+import { isArray } from '../type/array';
 
 /**
  * Checks if the given values are equal.

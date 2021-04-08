@@ -1,11 +1,11 @@
-import { isNan } from '../type/nan';
-import { isString } from '../type/string';
-import { isArray } from '../type/array';
+import { isFunction } from '../type/function';
 import { isBoolean } from '../type/boolean';
 import { isNumber } from '../type/number';
-import { isDate } from '../type/date';
 import { isObject } from '../type/object';
-import { isFunction } from '../type/function';
+import { isString } from '../type/string';
+import { isArray } from '../type/array';
+import { isDate } from '../type/date';
+import { isNan } from '../type/nan';
 import { exists } from './exists';
 
 /**
