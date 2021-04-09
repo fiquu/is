@@ -16,8 +16,6 @@ export { isObject } from './object';
 
 export { isString } from './string';
 
-export { isJson } from './json';
-
 export { isRegExp } from './regexp';
 
 export { isSameType } from './sameType';

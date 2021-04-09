@@ -1,5 +1,3 @@
-import { isString } from './string';
-
 /**
  * Checks if the given value is a JSON string.
  *
@@ -13,15 +11,11 @@ import { isString } from './string';
  * isJson('not json'); // false
  */
 export const isJson = (val: string): boolean => {
-  if (!isString(val)) {
-    return false;
-  }
-
   try {
     JSON.parse(val);
 
     return true;
-  } catch (e) {
-    return false;
-  }
+  } catch (e) {}
+
+  return false;
 };

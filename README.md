@@ -19,21 +19,21 @@ npm i @fiquu/is
 Import all or just what you need:
 
 ```ts
-import is from '@fiquu/is';
+import { isString } from '@fiquu/is';
 
-is.string('foo'); // true
-is.string(2); // false
+isString('foo'); // true
+isString(2); // false
 
-is.number(1); // true
-is.number('1'); // false
+number(1); // true
+number('1'); // false
 
-is.intlPhone('+12015556677'); // true
-is.intlPhone('1234'); // false
+intlPhone('+12015556677'); // true
+intlPhone('1234'); // false
 ```
 
 ```ts
-import { number as isNumber, string as isString } from '@fiquu/is/type';
-import { intlPhone as isIntlPhone } from '@fiquu/is/regexp';
+import { isNumber, isString } from '@fiquu/is/type';
+import { isIntlPhone } from '@fiquu/is/regexp';
 
 isString('foo'); // true
 isSstring(2); // false
@@ -52,17 +52,17 @@ If you need to check multiple values, then use the `some` and `every` array meth
 ```ts
 import is from '@fiquu/is';
 
-['foo', 'bar'].every(is.string); // true
-[1, 2, 'baz'].every(is.string); // false
+['foo', 'bar'].every(isString); // true
+[1, 2, 'baz'].every(isString); // false
 
-[1, 2, 3, 4].every(is.number); // true
-[1, 2, 'foo'].every(is.number); // false
+[1, 2, 3, 4].every(isNumber); // true
+[1, 2, 'foo'].every(isNumber); // false
 
-['foo', 'bar', true].some(is.string); // true
-[1, 2, 'baz'].some(is.string); // false
+['foo', 'bar', true].some(isString); // true
+[1, 2, 'baz'].some(isString); // false
 
-[1, null, '3'].some(is.number); // true
-[false, null, 'foo'].some(is.number); // false
+[1, null, '3'].some(isNumber); // true
+[false, null, 'foo'].some(isNumber); // false
 ```
 
 ## Documentation

@@ -7,3 +7,5 @@ export { isCapitalized } from './capitalized';
 export { isPalindrome } from './palindrome';
 
 export { isBase64 } from './base64';
+
+export { isJson } from './json';

@@ -4,7 +4,7 @@
   "description": "Small check library for Node.js and the browser.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "nyc ts-mocha tests/**/*.spec.ts",
+    "test": "nyc ts-mocha 'tests/**/*.spec.ts'",
     "postversion": "git push --follow-tags",
     "build": "tsc && npm run docs",
     "docs": "typedoc",
@@ -16,7 +16,6 @@
   },
   "keywords": [
     "is",
-    "validation",
     "value",
     "range",
     "type",
@@ -27,13 +26,9 @@
     "email",
     "domain",
     "json",
-    "iphone",
-    "edge",
-    "ie",
-    "chrome",
-    "android",
-    "ipad",
-    "url"
+    "url",
+    "phone",
+    "base64"
   ],
   "author": "fiquu (https://github.com/fiquu) <hi@fiquu.dev>",
   "license": "MIT",
@@ -65,7 +60,6 @@
     "ts-node": "^9.1.1",
     "typedoc": "^0.20.35",
     "typescript": "^4.2.3",
-    "useragent-generator": "^1.1.1-amkt-22079-finish.0",
     "uuid": "^8.3.2"
   }
 }
