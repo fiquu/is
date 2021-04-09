@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@fiquu/is | @fiquu/is</title>
+	<title>regexp | @fiquu/is</title>
 	<meta name="description" content="Documentation for @fiquu/is">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
@@ -2674,7 +2674,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="index.html">@fiquu/is</a></strong>
+					<strong><a href="../index.html">@fiquu/is</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2704,152 +2704,176 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isalphanumeric" class="tsd-kind-icon">is<wbr>Alphanumeric</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#iscreditcard" class="tsd-kind-icon">is<wbr>Credit<wbr>Card</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isdatestring" class="tsd-kind-icon">is<wbr>Date<wbr>String</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isdomain" class="tsd-kind-icon">is<wbr>Domain</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isemail" class="tsd-kind-icon">is<wbr>Email</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#iseppphone" class="tsd-kind-icon">is<wbr>Epp<wbr>Phone</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#ishex" class="tsd-kind-icon">is<wbr>Hex</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#ishexcolor" class="tsd-kind-icon">is<wbr>Hex<wbr>Color</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isintlphone" class="tsd-kind-icon">is<wbr>Intl<wbr>Phone</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isip" class="tsd-kind-icon">is<wbr>Ip</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isipv4" class="tsd-kind-icon">is<wbr>Ipv4</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isipv6" class="tsd-kind-icon">is<wbr>Ipv6</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isjwt" class="tsd-kind-icon">is<wbr>Jwt</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isnanpphone" class="tsd-kind-icon">is<wbr>Nanp<wbr>Phone</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#istimestring" class="tsd-kind-icon">is<wbr>Time<wbr>String</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isurl" class="tsd-kind-icon">is<wbr>Url</a>
+		</li>
+		<li class=" tsd-kind-reference tsd-parent-kind-module">
+			<a href="regexp.html#isuuid" class="tsd-kind-icon">is<wbr>Uuid</a>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<div class="tsd-panel tsd-typography">
-			<a href="#fiquuis" id="fiquuis" style="color: inherit; text-decoration: none;">
-				<h1>@fiquu/is</h1>
-			</a>
-			<p><a href="https://travis-ci.org/fiquu/is"><img src="https://travis-ci.org/fiquu/is.svg?branch=master" alt="Build Status"></a>
-				<img src="https://img.shields.io/github/license/fiquu/is" alt="GitHub">
-				<img src="https://img.shields.io/github/last-commit/fiquu/is" alt="GitHub last commit">
-				<img src="https://img.shields.io/npm/v/@fiquu/is" alt="npm (scoped)">
-			<img src="https://img.shields.io/npm/dw/@fiquu/is" alt="npm"></p>
-			<p>Functional, dependency-free check library for Node.js and the browser (transpiled).</p>
-			<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
-				<h2>Installation</h2>
-			</a>
-			<pre><code class="language-sh"><span style="color: #000000">npm i @fiquu/is</span>
-</code></pre>
-			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-				<h2>Usage</h2>
-			</a>
-			<p>Import all or just what you need:</p>
-			<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isString</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is&#039;</span><span style="color: #000000">;</span>
-
-<span style="color: #795E26">isString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">isString</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-
-<span style="color: #795E26">number</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">number</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-
-<span style="color: #795E26">intlPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;+12015556677&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">intlPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1234&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-</code></pre>
-			<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isNumber</span><span style="color: #000000">, </span><span style="color: #001080">isString</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/type&#039;</span><span style="color: #000000">;</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isIntlPhone</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/regexp&#039;</span><span style="color: #000000">;</span>
-
-<span style="color: #795E26">isString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">isSstring</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-
-<span style="color: #795E26">isNumber</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">isNumber</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-
-<span style="color: #795E26">isIntlPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;+12015556677&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">isIntlPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1234&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-</code></pre>
-			<a href="#multiple-values" id="multiple-values" style="color: inherit; text-decoration: none;">
-				<h3>Multiple Values</h3>
-			</a>
-			<p>If you need to check multiple values, then use the <code>some</code> and <code>every</code> array methods:</p>
-			<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">is</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is&#039;</span><span style="color: #000000">;</span>
-
-<span style="color: #000000">[</span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;bar&#039;</span><span style="color: #000000">].</span><span style="color: #795E26">every</span><span style="color: #000000">(</span><span style="color: #001080">isString</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;baz&#039;</span><span style="color: #000000">].</span><span style="color: #795E26">every</span><span style="color: #000000">(</span><span style="color: #001080">isString</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-
-<span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">4</span><span style="color: #000000">].</span><span style="color: #795E26">every</span><span style="color: #000000">(</span><span style="color: #001080">isNumber</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">].</span><span style="color: #795E26">every</span><span style="color: #000000">(</span><span style="color: #001080">isNumber</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-
-<span style="color: #000000">[</span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;bar&#039;</span><span style="color: #000000">, </span><span style="color: #0000FF">true</span><span style="color: #000000">].</span><span style="color: #795E26">some</span><span style="color: #000000">(</span><span style="color: #001080">isString</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;baz&#039;</span><span style="color: #000000">].</span><span style="color: #795E26">some</span><span style="color: #000000">(</span><span style="color: #001080">isString</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-
-<span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #0000FF">null</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;3&#039;</span><span style="color: #000000">].</span><span style="color: #795E26">some</span><span style="color: #000000">(</span><span style="color: #001080">isNumber</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #000000">[</span><span style="color: #0000FF">false</span><span style="color: #000000">, </span><span style="color: #0000FF">null</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">].</span><span style="color: #795E26">some</span><span style="color: #000000">(</span><span style="color: #001080">isNumber</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
-</code></pre>
-			<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
-				<h2>Documentation</h2>
-			</a>
-			<p>Please see <a href="https://fiquu.github.io/is/">the documentation page</a> for more details.</p>
-		</div>
-		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Modules</h3>
+						<h3>References</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-module"><a href="modules/arithmetic.html" class="tsd-kind-icon">arithmetic</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_above.html" class="tsd-kind-icon">arithmetic/above</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_between.html" class="tsd-kind-icon">arithmetic/between</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_equal.html" class="tsd-kind-icon">arithmetic/equal</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_even.html" class="tsd-kind-icon">arithmetic/even</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_float.html" class="tsd-kind-icon">arithmetic/float</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_int.html" class="tsd-kind-icon">arithmetic/int</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_negative.html" class="tsd-kind-icon">arithmetic/negative</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_odd.html" class="tsd-kind-icon">arithmetic/odd</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_positive.html" class="tsd-kind-icon">arithmetic/positive</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_under.html" class="tsd-kind-icon">arithmetic/under</a></li>
-							<li class="tsd-kind-module"><a href="modules/arithmetic_within.html" class="tsd-kind-icon">arithmetic/within</a></li>
-							<li class="tsd-kind-module"><a href="modules/array.html" class="tsd-kind-icon">array</a></li>
-							<li class="tsd-kind-module"><a href="modules/array_in_array.html" class="tsd-kind-icon">array/in-<wbr>array</a></li>
-							<li class="tsd-kind-module"><a href="modules/array_sorted.html" class="tsd-kind-icon">array/sorted</a></li>
-							<li class="tsd-kind-module"><a href="modules/index.html" class="tsd-kind-icon">index</a></li>
-							<li class="tsd-kind-module"><a href="modules/object.html" class="tsd-kind-icon">object</a></li>
-							<li class="tsd-kind-module"><a href="modules/object_dom_node.html" class="tsd-kind-icon">object/dom-<wbr>node</a></li>
-							<li class="tsd-kind-module"><a href="modules/object_prop_count.html" class="tsd-kind-icon">object/prop-<wbr>count</a></li>
-							<li class="tsd-kind-module"><a href="modules/object_prop_defined.html" class="tsd-kind-icon">object/prop-<wbr>defined</a></li>
-							<li class="tsd-kind-module"><a href="modules/object_window_object.html" class="tsd-kind-icon">object/window-<wbr>object</a></li>
-							<li class="tsd-kind-module"><a href="modules/presence.html" class="tsd-kind-icon">presence</a></li>
-							<li class="tsd-kind-module"><a href="modules/presence_empty.html" class="tsd-kind-icon">presence/empty</a></li>
-							<li class="tsd-kind-module"><a href="modules/presence_exists.html" class="tsd-kind-icon">presence/exists</a></li>
-							<li class="tsd-kind-module"><a href="modules/presence_falsy.html" class="tsd-kind-icon">presence/falsy</a></li>
-							<li class="tsd-kind-module"><a href="modules/presence_space.html" class="tsd-kind-icon">presence/space</a></li>
-							<li class="tsd-kind-module"><a href="modules/presence_truthy.html" class="tsd-kind-icon">presence/truthy</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp.html" class="tsd-kind-icon">regexp</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_alphanumeric.html" class="tsd-kind-icon">regexp/alphanumeric</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_credit_card.html" class="tsd-kind-icon">regexp/credit-<wbr>card</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_date_string.html" class="tsd-kind-icon">regexp/date-<wbr>string</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_domain.html" class="tsd-kind-icon">regexp/domain</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_email.html" class="tsd-kind-icon">regexp/email</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_epp_phone.html" class="tsd-kind-icon">regexp/epp-<wbr>phone</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_hex.html" class="tsd-kind-icon">regexp/hex</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_hex_color.html" class="tsd-kind-icon">regexp/hex-<wbr>color</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_intl_phone.html" class="tsd-kind-icon">regexp/intl-<wbr>phone</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_ip.html" class="tsd-kind-icon">regexp/ip</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_ipv4.html" class="tsd-kind-icon">regexp/ipv4</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_ipv6.html" class="tsd-kind-icon">regexp/ipv6</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_jwt.html" class="tsd-kind-icon">regexp/jwt</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_nanp_phone.html" class="tsd-kind-icon">regexp/nanp-<wbr>phone</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_time_string.html" class="tsd-kind-icon">regexp/time-<wbr>string</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_url.html" class="tsd-kind-icon">regexp/url</a></li>
-							<li class="tsd-kind-module"><a href="modules/regexp_uuid.html" class="tsd-kind-icon">regexp/uuid</a></li>
-							<li class="tsd-kind-module"><a href="modules/string.html" class="tsd-kind-icon">string</a></li>
-							<li class="tsd-kind-module"><a href="modules/string_base64.html" class="tsd-kind-icon">string/base64</a></li>
-							<li class="tsd-kind-module"><a href="modules/string_capitalized.html" class="tsd-kind-icon">string/capitalized</a></li>
-							<li class="tsd-kind-module"><a href="modules/string_json.html" class="tsd-kind-icon">string/json</a></li>
-							<li class="tsd-kind-module"><a href="modules/string_lower_case.html" class="tsd-kind-icon">string/lower-<wbr>case</a></li>
-							<li class="tsd-kind-module"><a href="modules/string_palindrome.html" class="tsd-kind-icon">string/palindrome</a></li>
-							<li class="tsd-kind-module"><a href="modules/string_upper_case.html" class="tsd-kind-icon">string/upper-<wbr>case</a></li>
-							<li class="tsd-kind-module"><a href="modules/type.html" class="tsd-kind-icon">type</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_array.html" class="tsd-kind-icon">type/array</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_boolean.html" class="tsd-kind-icon">type/boolean</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_char.html" class="tsd-kind-icon">type/char</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_date.html" class="tsd-kind-icon">type/date</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_error.html" class="tsd-kind-icon">type/error</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_function.html" class="tsd-kind-icon">type/function</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_nan.html" class="tsd-kind-icon">type/nan</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_number.html" class="tsd-kind-icon">type/number</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_object.html" class="tsd-kind-icon">type/object</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_regexp.html" class="tsd-kind-icon">type/regexp</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_sametype.html" class="tsd-kind-icon">type/same<wbr>Type</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_string.html" class="tsd-kind-icon">type/string</a></li>
-							<li class="tsd-kind-module"><a href="modules/type_undefined.html" class="tsd-kind-icon">type/undefined</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isalphanumeric" class="tsd-kind-icon">is<wbr>Alphanumeric</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#iscreditcard" class="tsd-kind-icon">is<wbr>Credit<wbr>Card</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isdatestring" class="tsd-kind-icon">is<wbr>Date<wbr>String</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isdomain" class="tsd-kind-icon">is<wbr>Domain</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isemail" class="tsd-kind-icon">is<wbr>Email</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#iseppphone" class="tsd-kind-icon">is<wbr>Epp<wbr>Phone</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#ishex" class="tsd-kind-icon">is<wbr>Hex</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#ishexcolor" class="tsd-kind-icon">is<wbr>Hex<wbr>Color</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isintlphone" class="tsd-kind-icon">is<wbr>Intl<wbr>Phone</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isip" class="tsd-kind-icon">is<wbr>Ip</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isipv4" class="tsd-kind-icon">is<wbr>Ipv4</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isipv6" class="tsd-kind-icon">is<wbr>Ipv6</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isjwt" class="tsd-kind-icon">is<wbr>Jwt</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isnanpphone" class="tsd-kind-icon">is<wbr>Nanp<wbr>Phone</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#istimestring" class="tsd-kind-icon">is<wbr>Time<wbr>String</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isurl" class="tsd-kind-icon">is<wbr>Url</a></li>
+							<li class="tsd-kind-reference tsd-parent-kind-module"><a href="regexp.html#isuuid" class="tsd-kind-icon">is<wbr>Uuid</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>References</h2>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isalphanumeric" class="tsd-anchor"></a>
+				<h3>is<wbr>Alphanumeric</h3>
+				Re-exports <a href="">isAlphanumeric</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="iscreditcard" class="tsd-anchor"></a>
+				<h3>is<wbr>Credit<wbr>Card</h3>
+				Re-exports <a href="">isCreditCard</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isdatestring" class="tsd-anchor"></a>
+				<h3>is<wbr>Date<wbr>String</h3>
+				Re-exports <a href="">isDateString</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isdomain" class="tsd-anchor"></a>
+				<h3>is<wbr>Domain</h3>
+				Re-exports <a href="">isDomain</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isemail" class="tsd-anchor"></a>
+				<h3>is<wbr>Email</h3>
+				Re-exports <a href="">isEmail</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="iseppphone" class="tsd-anchor"></a>
+				<h3>is<wbr>Epp<wbr>Phone</h3>
+				Re-exports <a href="">isEppPhone</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="ishex" class="tsd-anchor"></a>
+				<h3>is<wbr>Hex</h3>
+				Re-exports <a href="">isHex</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="ishexcolor" class="tsd-anchor"></a>
+				<h3>is<wbr>Hex<wbr>Color</h3>
+				Re-exports <a href="">isHexColor</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isintlphone" class="tsd-anchor"></a>
+				<h3>is<wbr>Intl<wbr>Phone</h3>
+				Re-exports <a href="">isIntlPhone</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isip" class="tsd-anchor"></a>
+				<h3>is<wbr>Ip</h3>
+				Re-exports <a href="">isIp</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isipv4" class="tsd-anchor"></a>
+				<h3>is<wbr>Ipv4</h3>
+				Re-exports <a href="">isIpv4</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isipv6" class="tsd-anchor"></a>
+				<h3>is<wbr>Ipv6</h3>
+				Re-exports <a href="">isIpv6</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isjwt" class="tsd-anchor"></a>
+				<h3>is<wbr>Jwt</h3>
+				Re-exports <a href="">isJwt</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isnanpphone" class="tsd-anchor"></a>
+				<h3>is<wbr>Nanp<wbr>Phone</h3>
+				Re-exports <a href="">isNanpPhone</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="istimestring" class="tsd-anchor"></a>
+				<h3>is<wbr>Time<wbr>String</h3>
+				Re-exports <a href="">isTimeString</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isurl" class="tsd-anchor"></a>
+				<h3>is<wbr>Url</h3>
+				Re-exports <a href="">isUrl</a>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+				<a name="isuuid" class="tsd-anchor"></a>
+				<h3>is<wbr>Uuid</h3>
+				Re-exports <a href="">isUuid</a>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
