@@ -2726,20 +2726,22 @@ img {
 			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 				<h2>Usage</h2>
 			</a>
-			<p>Import all or just what you need:</p>
-			<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isString</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is&#039;</span><span style="color: #000000">;</span>
+			<p>Import by category:</p>
+			<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isString</span><span style="color: #000000">, </span><span style="color: #001080">isNumber</span><span style="color: #000000">, </span><span style="color: #001080">isIntlPhone</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/type&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #795E26">isString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
 <span style="color: #795E26">isString</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
 
-<span style="color: #795E26">number</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
-<span style="color: #795E26">number</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #795E26">isNumber</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #795E26">isNumber</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
 
 <span style="color: #795E26">intlPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;+12015556677&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
 <span style="color: #795E26">intlPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1234&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
 </code></pre>
-			<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isNumber</span><span style="color: #000000">, </span><span style="color: #001080">isString</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/type&#039;</span><span style="color: #000000">;</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isIntlPhone</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/regexp&#039;</span><span style="color: #000000">;</span>
+			<p>Or just what you need:</p>
+			<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isIntlPhone</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/regexp/intl-phone&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isString</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/type/string&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">isNumber</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@fiquu/is/type/number&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #795E26">isString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;foo&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
 <span style="color: #795E26">isSstring</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
@@ -2795,7 +2797,6 @@ img {
 							<li class="tsd-kind-module"><a href="modules/array.html" class="tsd-kind-icon">array</a></li>
 							<li class="tsd-kind-module"><a href="modules/array_in_array.html" class="tsd-kind-icon">array/in-<wbr>array</a></li>
 							<li class="tsd-kind-module"><a href="modules/array_sorted.html" class="tsd-kind-icon">array/sorted</a></li>
-							<li class="tsd-kind-module"><a href="modules/index.html" class="tsd-kind-icon">index</a></li>
 							<li class="tsd-kind-module"><a href="modules/object.html" class="tsd-kind-icon">object</a></li>
 							<li class="tsd-kind-module"><a href="modules/object_dom_node.html" class="tsd-kind-icon">object/dom-<wbr>node</a></li>
 							<li class="tsd-kind-module"><a href="modules/object_prop_count.html" class="tsd-kind-icon">object/prop-<wbr>count</a></li>

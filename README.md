@@ -16,24 +16,28 @@ npm i @fiquu/is
 
 ## Usage
 
-Import all or just what you need:
+Import by category:
 
 ```ts
-import { isString } from '@fiquu/is';
+import { isString, isNumber } from '@fiquu/is/type';
+import { isIntlPhone } from '@fiquu/is/regexp';
 
 isString('foo'); // true
 isString(2); // false
 
-number(1); // true
-number('1'); // false
+isNumber(1); // true
+isNumber('1'); // false
 
 intlPhone('+12015556677'); // true
 intlPhone('1234'); // false
 ```
 
+Or just what you need:
+
 ```ts
-import { isNumber, isString } from '@fiquu/is/type';
-import { isIntlPhone } from '@fiquu/is/regexp';
+import { isIntlPhone } from '@fiquu/is/regexp/intl-phone';
+import { isString } from '@fiquu/is/type/string';
+import { isNumber } from '@fiquu/is/type/number';
 
 isString('foo'); // true
 isSstring(2); // false
@@ -50,7 +54,7 @@ isIntlPhone('1234'); // false
 If you need to check multiple values, then use the `some` and `every` array methods:
 
 ```ts
-import is from '@fiquu/is';
+import { isString, isNumber } from '@fiquu/is/type';
 
 ['foo', 'bar'].every(isString); // true
 [1, 2, 'baz'].every(isString); // false

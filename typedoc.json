@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["./src"],
+  "entryPoints": ["./src/"],
   "theme": "minimal",
   "out": "docs"
 }
