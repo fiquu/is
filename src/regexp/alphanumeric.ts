@@ -1,7 +1,12 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp => /^[A-Za-z0-9]+$/;
+
+/**
  * Checks for an alphanumeric string.
  *
- * @param {any} val The value to check.
+ * @param {string} val The value to check.
  *
  * @returns {boolean} Whether the value is an alphanumeric string.
  *
@@ -11,4 +16,5 @@
  * isAlphaNumeric(true); // false
  */
 export const isAlphanumeric = (val: string): boolean =>
-  /^[A-Za-z0-9]+$/.test(val);
+  // eslint-disable-next-line security/detect-non-literal-regexp
+  getRegExp().test(val);

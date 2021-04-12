@@ -1,4 +1,10 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp =>
+  /^([a-zA-Z0-9_=]{4,})\.([a-zA-Z0-9_=]{4,})\.([a-zA-Z0-9_\-\+\/=]{4,})$/;
+
+/**
  * Checks for a valid JWT string.
  *
  * @param {any} val The value to check.
@@ -15,7 +21,4 @@
  * isJwt('not jwt'); // false
  * isJwt('12345'); // false
  */
-export const isJwt = (val: string): boolean =>
-  /^([a-zA-Z0-9_=]{4,})\.([a-zA-Z0-9_=]{4,})\.([a-zA-Z0-9_\-\+\/=]{4,})$/.test(
-    val
-  );
+export const isJwt = (val: string): boolean => getRegExp().test(val);

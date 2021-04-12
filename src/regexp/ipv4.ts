@@ -1,4 +1,10 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp =>
+  /^\s*((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))\s*$/;
+
+/**
  * Checks for a valid IPv4 address.
  *
  * @param {any} val The value to check.
@@ -11,7 +17,4 @@
  * isIpv4('5555.555.5.5'); // false
  * isIpv4(true); // false
  */
-export const isIpv4 = (val: string): boolean =>
-  /^\s*((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))\s*$/.test(
-    val
-  );
+export const isIpv4 = (val: string): boolean => getRegExp().test(val);

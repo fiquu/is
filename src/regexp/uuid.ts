@@ -1,4 +1,10 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp =>
+  /^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$/;
+
+/**
  * Checks for a valid UUID (v1, v3, v4, v5) string.
  *
  * @param {any} val The value to check.
@@ -14,7 +20,4 @@
  * isUuid('not uuid'); // false
  * isUuid('12345'); // false
  */
-export const isUuid = (val: string): boolean =>
-  /^[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}$/.test(
-    val
-  );
+export const isUuid = (val: string): boolean => getRegExp().test(val);

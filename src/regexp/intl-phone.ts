@@ -1,4 +1,9 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp => /^\+[1-9][0-9]{0,4}[0-9]{2,14}?$/;
+
+/**
  * Checks for a valid international phone number formatted value (WhatsApp, Telegram, etc.).
  *
  * @param {any} val The value to check.
@@ -13,5 +18,4 @@
  * isIntPhone('1'); // false
  * isIntPhone(true); // false
  */
-export const isIntlPhone = (val: string): boolean =>
-  /^\+[1-9][0-9]{0,4}[0-9]{2,14}?$/.test(val);
+export const isIntlPhone = (val: string): boolean => getRegExp().test(val);

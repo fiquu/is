@@ -1,4 +1,10 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp =>
+  /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$/;
+
+/**
  * Checks for a valid domain name.
  *
  * @param {any} val The value to check.
@@ -15,7 +21,4 @@
  * isDomain(1234); // false
  * isDomain(true); // false
  */
-export const isDomain = (val: string): boolean =>
-  /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$/.test(
-    val
-  );
+export const isDomain = (val: string): boolean => getRegExp().test(val);

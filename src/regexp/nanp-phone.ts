@@ -1,4 +1,10 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp =>
+  /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+/**
  * Checks for a valid north american number plan formatted value.
  *
  * @param {any} val The value to check.
@@ -10,5 +16,4 @@
  * isNanpPhone('1'); // false
  * isNanpPhone(true); // false
  */
-export const isNanpPhone = (val: string): boolean =>
-  /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(val);
+export const isNanpPhone = (val: string): boolean => getRegExp().test(val);

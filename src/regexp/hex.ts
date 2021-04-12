@@ -1,4 +1,9 @@
 /**
+ * @returns {RegExp} The RegExp pattern used to perform the check.
+ */
+export const getRegExp = (): RegExp => /^[0-9a-fA-F]+$/;
+
+/**
  * Checks for a valid hexadecimal value.
  *
  * @param {any} val The value to check.
@@ -12,4 +17,4 @@
  * isHex(0.287); // false
  * isHex(true); // false
  */
-export const isHex = (val: string): boolean => /^[0-9a-fA-F]+$/.test(val);
+export const isHex = (val: string): boolean => getRegExp().test(val);

@@ -8,10 +8,6 @@ export { isCreditCard } from './credit-card';
 
 export { isAlphanumeric } from './alphanumeric';
 
-export { isTimeString } from './time-string';
-
-export { isDateString } from './date-string';
-
 export { isNanpPhone } from './nanp-phone';
 
 export { isEppPhone } from './epp-phone';
