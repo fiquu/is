@@ -4,7 +4,6 @@ import * as uuid from 'uuid';
 import {
   isAlphanumeric,
   isCreditCard,
-  isDateString,
   isDomain,
   isEmail,
   isEppPhone,
@@ -16,7 +15,6 @@ import {
   isIpv6,
   isJwt,
   isNanpPhone,
-  isTimeString,
   isUrl,
   isUuid
 } from '../../src/regexp';
@@ -277,86 +275,6 @@ describe('RegExp', function () {
 
       it('returns false if all given values are not alpha numeric', function () {
         expect(['=', '????', ''].some(isAlphanumeric)).to.be.false;
-      });
-    });
-  });
-
-  describe('isTimeString()', function () {
-    it('returns true if given value is time string', function () {
-      expect(isTimeString('13:45:30')).to.be.true;
-    });
-
-    it('returns false if given value is not time string', function () {
-      expect(isTimeString('12:12:90')).to.be.false;
-    });
-
-    describe('not', function () {
-      it('returns false if given value is time string', function () {
-        expect(!isTimeString('13:45:30')).to.be.false;
-      });
-
-      it('returns true if given value is not time string', function () {
-        expect(!isTimeString('12:12:90')).to.be.true;
-      });
-    });
-
-    describe('every', function () {
-      it('returns true if all given values are time string', function () {
-        expect(['13:45:30', '10:15:20'].every(isTimeString)).to.be.true;
-      });
-
-      it('returns false if any given value is not time string', function () {
-        expect(['13:45:30', '12:12:90'].every(isTimeString)).to.be.false;
-      });
-    });
-
-    describe('some', function () {
-      it('returns true if any given value is time string', function () {
-        expect(['13:45:30', '12:12:90'].some(isTimeString)).to.be.true;
-      });
-
-      it('returns false if all given values are not time string', function () {
-        expect(['12:12:90', '12:12:66'].some(isTimeString)).to.be.false;
-      });
-    });
-  });
-
-  describe('isDateString()', function () {
-    it('returns true if given value is date string', function () {
-      expect(isDateString('11/11/2011')).to.be.true;
-    });
-
-    it('returns false if given value is not date string', function () {
-      expect(isDateString('1')).to.be.false;
-    });
-
-    describe('not', function () {
-      it('returns false if given value is date string', function () {
-        expect(!isDateString('11/11/2011')).to.be.false;
-      });
-
-      it('returns true if given value is not date string', function () {
-        expect(!isDateString('1/5')).to.be.true;
-      });
-    });
-
-    describe('every', function () {
-      it('returns true if all given values are date string', function () {
-        expect(['11/11/2011', '10/21/2012'].every(isDateString)).to.be.true;
-      });
-
-      it('returns false if any given value is not dateString', function () {
-        expect(['11/11/2011', '1'].every(isDateString)).to.be.false;
-      });
-    });
-
-    describe('some', function () {
-      it('returns true if any given value is date string', function () {
-        expect(['11/11/2011', '1'].some(isDateString)).to.be.true;
-      });
-
-      it('returns false if all given values are not date string', function () {
-        expect(['11/11/1', '11/11/1'].some(isDateString)).to.be.false;
       });
     });
   });
