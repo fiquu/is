@@ -36,10 +36,6 @@
     "url": "https://github.com/fiquu/is/issues"
   },
   "homepage": "https://github.com/fiquu/is#readme",
-  "engines": {
-    "node": "14",
-    "npm": "6"
-  },
   "dependencies": {},
   "devDependencies": {
     "@fiquu/eslint-config": "^4.0.1",
